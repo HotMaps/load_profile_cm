@@ -65,7 +65,19 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     data = data.transpose()
 
     data = pd.DataFrame(data, columns=["hour", "load"])
+
+    industry_profile_monthly = np.sum(np.reshape(industry_profile, (12, 730)), axis=1).tolist()
+    residential_heating_profile_monthly = np.sum(np.reshape(res_heating_profile, (12, 730)), axis=1).tolist()
+    tertiary_profile_monthly = np.sum(np.reshape(tertiary_profile, (12, 730)), axis=1).tolist()
+    effective_profile_monthly = np.sum(np.reshape(effective_profile, (12, 730)), axis=1).tolist()
+
     data.to_csv(output_directory, index=False)
+
+    return industry_profile_monthly, residential_heating_profile_monthly, tertiary_profile_monthly,\
+        effective_profile_monthly
+
+
+
 
 
 

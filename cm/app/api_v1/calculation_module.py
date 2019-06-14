@@ -45,10 +45,12 @@ def calculation(output_directory, inputs_raster_selection, input_vector_selectio
 
     output_csv_path_1 = generate_output_file_csv(output_directory)
 
-    run_cm.main(res_heating_share, industry_share, tertiary_share, nuts2_id, output_csv_path_1)
-
+    graphics = run_cm.main(res_heating_share, industry_share, tertiary_share, nuts2_id, output_csv_path_1)
+    
     result = dict()
 
+    result["graphics"] = graphics
+    
     result["csv_files"] = [{"Load profile": "csv 1", "path": output_csv_path_1}]
 
     result['name'] = 'Load profile CM'
