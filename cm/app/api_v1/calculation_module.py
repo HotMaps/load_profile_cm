@@ -53,7 +53,7 @@ def calculation(output_directory, inputs_raster_selection, input_vector_selectio
     
     result["csv_files"] = [{"Load profile": "csv 1", "path": output_csv_path_1}]
 
-    result['name'] = 'Load profile CM'
+    result['name'] = 'CM - Heat load profiles'
 
 
     return result
