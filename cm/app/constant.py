@@ -57,7 +57,6 @@ SIGNATURE = {
     "layers_needed": [
     ],
     "vectors_needed": [
-
     ],
     "type_layer_needed": [
     ],

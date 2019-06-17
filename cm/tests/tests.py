@@ -6,8 +6,8 @@ from shutil import copyfile
 from .test_client import TestClient
 
 import json as json_lib
-
-UPLOAD_DIRECTORY = 'home/david/var/hotmaps/cm_files_uploaded'
+#CM provider are not alloed to change the upload directory
+UPLOAD_DIRECTORY = '/var/tmp'
 
 if not os.path.exists(UPLOAD_DIRECTORY):
     os.makedirs(UPLOAD_DIRECTORY)
