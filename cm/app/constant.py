@@ -8,7 +8,7 @@ CM_REGISTER_Q = 'rpc_queue_CM_register'
 CM_NAME = 'CM - Heat load profiles'
 RPC_CM_ALIVE= 'rpc_queue_CM_ALIVE'
 RPC_Q = 'rpc_queue_CM_compute' # Do no change this value
-CM_ID = 7
+CM_ID = 17
 PORT_LOCAL = int('500' + str(CM_ID))
 PORT_DOCKER = 80
 #TODO***********************************************************************
