@@ -1,4 +1,5 @@
 from osgeo import gdal
+from ..constant import CM_NAME
 
 from ..helper import generate_output_file_tif, create_zip_shapefiles, generate_output_file_shp, generate_output_file_csv
 import time
@@ -53,7 +54,7 @@ def calculation(output_directory, inputs_raster_selection, input_vector_selectio
     
     result["csv_files"] = [{"Load profile": "csv 1", "path": output_csv_path_1}]
 
-    result['name'] = 'CM - Heat load profiles'
+    result['name'] = CM_NAME
 
 
     return result
