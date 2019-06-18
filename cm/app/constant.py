@@ -46,7 +46,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_min': 0,
      'input_max': 1,
      'cm_id': CM_ID
-     },
+     }
 
 ]
 
