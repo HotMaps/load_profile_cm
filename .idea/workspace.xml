@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cb168f1-a4be-4f34-bea2-a75a1911a24d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/load_profile_cm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/load_profile_cm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/constant.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/tests/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
+            <state relative-caret-position="479">
               <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -69,11 +70,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cm/app/api_v1/calculation_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="225">
+              <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -81,18 +82,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/app/constant.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cm/app/exceptions.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -109,16 +105,14 @@
         <option value="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py" />
         <option value="$PROJECT_DIR$/cm/tests/tests.py" />
         <option value="$PROJECT_DIR$/cm/app/api_v1/transactions.py" />
-        <option value="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" />
         <option value="$PROJECT_DIR$/cm/app/constant.py" />
+        <option value="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1858" />
-    <option name="y" value="112" />
-    <option name="width" value="1502" />
-    <option name="height" value="938" />
+    <option name="width" value="1280" />
+    <option name="height" value="1421" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -126,8 +120,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,43 +150,14 @@
               <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
               <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
               <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="david" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="david" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="david" type="462c0819:PsiDirectoryNode" />
-              <item name="var" type="462c0819:PsiDirectoryNode" />
-              <item name="hotmaps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Course" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -239,15 +203,15 @@
       <method v="2" />
     </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Computation_module" />
+      <module name="load_profile_cm" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/bin/python3.7" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cm" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -290,10 +254,10 @@
     <option name="totallyTimeSpent" value="4220000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1858" y="112" width="1502" height="938" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="1421" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34065935" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2897047" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -302,14 +266,14 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295711" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295711" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33915213" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3393529" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -362,19 +326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cm/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/tests/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cm/run_all_local_terminal.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -394,20 +345,33 @@
     <entry file="file://$PROJECT_DIR$/cm/app/exceptions.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/calculation_module.py">
+    <entry file="file://$PROJECT_DIR$/cm/tests/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="479">
+          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cm/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/cm/app/constant.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/calculation_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

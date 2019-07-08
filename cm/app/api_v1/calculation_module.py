@@ -26,9 +26,9 @@ def calculation(output_directory, inputs_raster_selection, input_vector_selectio
     Outputs:
         DH_Regions: contains binary values (no units) showing coherent areas
     '''
-    res_heating_share = inputs_parameter_selection["res_heating_share"]
-    industry_share = inputs_parameter_selection["industry_share"]
-    tertiary_share = inputs_parameter_selection["tertiary_share"]
+    res_heating_share = float(inputs_parameter_selection["res_heating_share"])
+    industry_share = float(inputs_parameter_selection["industry_share"])
+    tertiary_share = float(inputs_parameter_selection["tertiary_share"])
 
     nuts2_id = nuts
     print('type nuts', type(nuts2_id))
@@ -55,7 +55,6 @@ def calculation(output_directory, inputs_raster_selection, input_vector_selectio
     result["csv_files"] = [{"Load profile": "csv 1", "path": output_csv_path_1}]
 
     result['name'] = CM_NAME
-
 
     return result
 
