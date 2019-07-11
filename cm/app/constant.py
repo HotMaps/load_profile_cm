@@ -24,7 +24,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_type': 'range',
      'input_parameter_name': 'res_heating_share',
      'input_value': 0.33,
-     'input_unit': '',
+     'input_unit': 'none',
      'input_min': 0,
      'input_max': 1,
      'cm_id': CM_ID
@@ -33,7 +33,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_type': 'range',
      'input_parameter_name': 'industry_share',
      'input_value': 0.33,
-     'input_unit': '',
+     'input_unit': 'none',
      'input_min': 0,
      'input_max': 1,
      'cm_id': CM_ID
@@ -42,7 +42,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_type': 'range',
      'input_parameter_name': 'tertiary_share',
      'input_value': 0.33,
-     'input_unit': '',
+     'input_unit': 'none',
      'input_min': 0,
      'input_max': 1,
      'cm_id': CM_ID
