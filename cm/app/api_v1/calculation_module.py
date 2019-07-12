@@ -72,7 +72,7 @@ def calculation(output_directory, inputs_raster_selection,inputs_vector_selectio
     result['indicator'] = [{"unit": "GWh", "name": "Heat density total multiplied by  {}".format(factor),"value": str(hdm_sum)}]
     result['graphics'] = graphics
     result['vector_layers'] = vector_layers
-    result['raster_layers'] = [{"name": "layers of heat_densiy {}".format(factor),"path": output_raster1} ]
+    result['raster_layers'] = [{"name": "layers of heat_densiy {}".format(factor),"path": output_raster1, "type": "heat"}]
     print ('result',result)
     return result
 
