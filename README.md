@@ -519,10 +519,8 @@ All the layer outputs must be retrieved and added to the **vector_layers** array
 
 #### Symbology
 
-##### Raster layers
-
-For raster layers, there are two types of symbologies handled, both are recognized with the *type* field of the layer:
-  - the predefined symbology: those are already existing symbologies for the types *heat*, *gross_floor_area*, *building_volumes* and *solar_optimal_total* ;
+For both types of layers, vector or raster, there are two types of symbologies handled, both are recognized with the *type* field of the layer:
+  - the predefined symbology : you do not need to create a new symbology because it has already been defined for the type you have chosen. Raster layers have four defined symbologies: *heat*, *gross_floor_area*, *building_volumes*, *solar_optimal_total* ;
 
   - the custom symbology: if ever the symbology of your layer does not already exist, it is possible for you to create it. You simply have to set the *type* on "custom" and add a new field *symbology*. This new field must contain values for:
     - the RGB colors (between 0 and 255 for each of the three)
@@ -537,18 +535,21 @@ Find below an example for the two symbology types:
       {"name": "heat density layer divided by 2", "path": output_raster_1, "type": "heat"},
       {"name": "district heating coherent areas", "path": output_raster_2, "type": "custom",
                "symbology": [
-                    {"red":255, "green":140, "blue":0, "opacity":0.8, "value":"100", "label":"label_for_the_range_100"},
-                    {"red":255, "green":255, "blue":0, "opacity":0.8, "value":"200", "label":"label_for_the_range_200"},
-                    {"red": 0 , "green":255, "blue":0, "opacity":0.8, "value":"300", "label":"label_for_the_range_300"}
+                    {"red":255, "green":121, "blue":121, "opacity":0.8, "value":"100", "label":"DH Areas"}
+               ]
+      }
+  ],
+  "vector_layers":[
+      {"name": "wwtp_1", "path": output_shp_zipped_1, "type": "wwtp"},
+      {"name": "wwtp_2_custom", "path": output_shp_zipped_2, "type": "custom",
+               "symbology": [
+                    {"red":255, "green":255, "blue":255, "opacity":0.8, "value":"100", "label":"250 kW"},
+                    {"red":255, "green":252, "blue":188, "opacity":0.8, "value":"200", "label":"500 kW"},
+                    {"red":255, "green":244, "blue": 0 , "opacity":0.8, "value":"300", "label":"750 kW"}
                ]
       }
   ]
 ```
-
-##### Vector layers
-
-For vector layers, if you want to change the colorization of your shapefile, you will need to add the fields *color*, *fillColor* and *opacity* to the properties of each feature in your shapefile.
-
 
 <code><ins>**[To Top](#table-of-contents)**</ins></code>
 
@@ -609,7 +610,7 @@ The purpose of this part is to give the ability to the developer to create graph
 
 *******************************************************************
 
-### Retriving list of layers available for CM
+### Retrieving list of layers available for CM
 
 Please find in the link below the list of layers available as input for a CM (ressource name column):
 
