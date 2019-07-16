@@ -53,7 +53,7 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
         res_heating_profile = res_heating_profile + normalized_heat_profiles["residential_heating"][nuts2_id]
         tertiary_profile = tertiary_profile + normalized_heat_profiles["Sanitary Hot Water Tertiary"][nuts2_id]
 
-    res_heating_profile = res_heating_profile / np.sum(industry_profile)
+    res_heating_profile = res_heating_profile / np.sum(res_heating_profile)
     tertiary_profile = tertiary_profile / np.sum(tertiary_profile)
 
     effective_profile = res_heating_share * res_heating_profile + industry_share * industry_profile + \
