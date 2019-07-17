@@ -435,14 +435,13 @@ The purpose of this part is to give developers the ability to build different ki
             {"name": "gross floor area layer divided by 4","path": output_raster_path_tif_3,"type": "gross_floor_area"}
       ],
       "vector_layers":[
-            {"name": "heat density layer divided by 2","path": 'e6caa1dc-e3c0-4968-977a-197c8fe29d32.zip',"type": "heat"},
-            {"name": "heat density layer divided by 3","path": 'e6caahkiuu-e3c0-4968-977a-197c8fe29d32.zip',"type": "heat"},
-            {"name": "heat density layer divided by 4","path": 'e6caa1dc-e3c0-4968-977a-hhzthfefe.zip',"type": "heat"}
+            {"name": "wwtp_1", "path": output_shp_zipped_1, "type": "wwtp"},
+            {"name": "wwtp_2", "path": output_shp_zipped_2, "type": "wwtp"}
       ],
       "csv_files":[
-            {"name": "heat_load_1","path": output_csv_file_1},
-            {"name": "heat_load_2","path": output_csv_file_2},
-            {"name": "heat_load_1","path": output_csv_file_3}
+            {"name": "heat_load_1", "path": output_csv_file_1},
+            {"name": "heat_load_2", "path": output_csv_file_2},
+            {"name": "heat_load_3", "path": output_csv_file_3}
       ],
       "graphics": [
             {"type": "bar",
@@ -519,7 +518,9 @@ All the layer outputs must be retrieved and added to the **vector_layers** array
 
 #### Symbology
 
-For both types of layers, vector or raster, there are two types of symbologies handled, both are recognized with the *type* field of the layer:
+##### Raster
+
+There are two types of symbologies handled, both are recognized with the *type* field of the layer:
   - the predefined symbology : you do not need to create a new symbology because it has already been defined for the type you have chosen. Raster layers have four defined symbologies: *heat*, *gross_floor_area*, *building_volumes*, *solar_optimal_total* ;
 
   - the custom symbology: if ever the symbology of your layer does not already exist, it is possible for you to create it. You simply have to set the *type* on "custom" and add a new field *symbology*. This new field must contain values for:
@@ -538,7 +539,14 @@ Find below an example for the two symbology types:
                     {"red":255, "green":121, "blue":121, "opacity":0.8, "value":"100", "label":"DH Areas"}
                ]
       }
-  ],
+  ]
+```
+
+##### Vector
+
+In the output of the calculation module, vector layers have the exact same management of their symbology as raster layers. Either the symbology is already defined because the type exists, or you have to define it and set the *type* on "custom". Here is an example:
+
+```python
   "vector_layers":[
       {"name": "wwtp_1", "path": output_shp_zipped_1, "type": "wwtp"},
       {"name": "wwtp_2_custom", "path": output_shp_zipped_2, "type": "custom",
@@ -550,6 +558,8 @@ Find below an example for the two symbology types:
       }
   ]
 ```
+
+The difference between vector and raster layers is that there is an extra step to add a custom symbology for vectors. In addition to the definition of this symbology in the output, you also have to add three new fields to the properties of each feature in your shapefile: *color* for the outline of your vector, *fillColor* for the filling and *opacity*. Both *color* and *fillColor* attributes must be hexadecimal values (for example *#c51b8a*), and the opacity must be a value between 0 and 1.
 
 <code><ins>**[To Top](#table-of-contents)**</ins></code>
 
