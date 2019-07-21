@@ -7,7 +7,7 @@ from .test_client import TestClient
 
 import json as json_lib
 #CM provider are not alloed to change the upload directory
-UPLOAD_DIRECTORY = '/var/tmp'
+UPLOAD_DIRECTORY = 'home/david/var/hotmaps/cm_files_uploaded'
 
 if not os.path.exists(UPLOAD_DIRECTORY):
     os.makedirs(UPLOAD_DIRECTORY)
@@ -32,7 +32,21 @@ class TestAPI(unittest.TestCase):
     def test_compute(self):
         # simulate copy from HTAPI to CM
 
+        heat_total = "tests/data/pl22_total.tif"
+        heat_total_save_path = UPLOAD_DIRECTORY + "/heat_total.tif"
+        copyfile(heat_total, heat_total_save_path)
 
+        heat_res = "tests/data/pl22_res.tif"
+        heat_res_save_path = UPLOAD_DIRECTORY + "/heat_res.tif"
+        copyfile(heat_res, heat_res_save_path)
+
+        heat_nonres = "tests/data/pl22_nonres.tif"
+        heat_nonres_save_path = UPLOAD_DIRECTORY + "/heat_nonres.tif"
+        copyfile(heat_nonres, heat_nonres_save_path)
+
+        nuts_id = "tests/data/pl22_nuts.tif"
+        nuts_id_save_path = UPLOAD_DIRECTORY + "/nuts.tif"
+        copyfile(nuts_id, nuts_id_save_path)
 
         inputs_raster_selection = {}
         inputs_parameter_selection = {}
@@ -62,7 +76,12 @@ class TestAPI(unittest.TestCase):
         inputs_parameter_selection["res_heating_share"] = 0.33
         inputs_parameter_selection["industry_share"] = 0.33
         inputs_parameter_selection["tertiary_share"] = 0.33
-        nuts = ['DK05']
+        nuts = ['PL22']
+
+        inputs_raster_selection["heat_tot_curr_density_tif"] = heat_total_save_path
+        inputs_raster_selection["heat_res_curr_density_tif"] = heat_res_save_path
+        inputs_raster_selection["heat_nonres_curr_density_tif"] = heat_nonres_save_path
+        inputs_raster_selection["nuts_id_number"] = nuts_id_save_path
 
         # register the calculation module a
         payload = {"inputs_raster_selection": inputs_raster_selection,

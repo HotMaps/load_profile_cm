@@ -15,25 +15,20 @@ from .my_calculation_module_directory import run_cm
 # TODO: CM provider can "return as many indicators as he wants"
 
 
-def calculation(output_directory, inputs_raster_selection, input_vector_selection, inputs_parameter_selection, nuts):
+def calculation(output_directory, inputs_raster_selection, inputs_vector_selection, inputs_parameter_selection, nuts):
     """ def calculation()"""
-    '''
-    inputs:
-        hdm in raster format for the selected region
-        pix_threshold [GWh/km2]
-        DH_threshold [GWh/a]
 
-    Outputs:
-        DH_Regions: contains binary values (no units) showing coherent areas
-    '''
+    heat_density_raster_total = inputs_raster_selection["heat_tot_curr_density_tif"]
+    heat_density_raster_res = inputs_raster_selection["heat_res_curr_density_tif"]
+    heat_density_raster_nonres = inputs_raster_selection["heat_nonres_curr_density_tif"]
+    nuts_id_number = inputs_raster_selection["nuts_id_number"]
+
     res_heating_share = float(inputs_parameter_selection["res_heating_share"])
     industry_share = float(inputs_parameter_selection["industry_share"])
     tertiary_share = float(inputs_parameter_selection["tertiary_share"])
 
     nuts2_id = nuts
     print('type nuts', type(nuts2_id))
-
-    # industrial_sites = inputs_vector_selection["industrial_database"]
 
     # lp_chemical = inputs_vector_selection["load_profile_industry_chemicals_and_petrochemicals_yearlong_2018"]
     # lp_food = inputs_vector_selection["load_profile_industry_food_and_tobacco_yearlong_2018"]
@@ -46,7 +41,7 @@ def calculation(output_directory, inputs_raster_selection, input_vector_selectio
 
     output_csv_path_1 = generate_output_file_csv(output_directory)
 
-    graphics = run_cm.main(res_heating_share, industry_share, tertiary_share, nuts2_id, output_csv_path_1)
+    graphics = run_cm.main(res_heating_share, industry_share, tertiary_share, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, nuts_id_number, output_csv_path_1)
     
     result = dict()
 

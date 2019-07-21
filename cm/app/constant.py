@@ -51,15 +51,29 @@ INPUTS_CALCULATION_MODULE = [
 ]
 
 
+
 SIGNATURE = {
     "category": "Buildings",
     "cm_name": CM_NAME,
     "layers_needed": [
         "heat_tot_curr_density_tif",
+        "heat_res_curr_density_tif",
+        "heat_nonres_curr_density_tif",
+        "nuts_id_number"
+    ],
+    "vectors_needed": [
+        # "lp_residential_shw_and_heating_yearlong_2010",
+        # "lp_industry_iron_and_steel_yearlong_2018",
+        # "lp_industry_paper_yearlong_2018",
+        # "lp_industry_non_metalic_minerals_yearlong_2018",
+        # "lp_industry_food_and_tobacco_yearlong_2018",
+        # "lp_industry_chemicals_and_petrochemicals_yearlong_2018"
     ],
     "type_layer_needed": [
         "heat",
+        "nuts_id_number"
     ],
+
     "cm_url": "Do not add something",
     "cm_description": "CM generating new load profiles",
     "cm_id": CM_ID,

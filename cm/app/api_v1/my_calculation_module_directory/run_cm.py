@@ -1,9 +1,11 @@
-from .load_profile.excess_heat import load_profile_gen
+from .load_profile.load_profile import load_profile_gen
 
 
-def main(res_heating_share, industry_share, tertiary_share, nuts2_id, output_directory):
-    industry_profile_monthly, residential_heating_profile_monthly, tertiary_profile_monthly, effective_profile_monthly =\
-        load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id, output_directory)
+def main(res_heating_share, industry_share, tertiary_share, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, nuts_id_number, output_directory):
+    industry_profile_monthly,res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
+    ter_shw_profile_monthly, effective_profile_monthly =\
+        load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id, heat_density_raster_total,
+                         heat_density_raster_res, heat_density_raster_nonres, nuts_id_number, output_directory)
 
     graphics = [{
             "type": "line",
@@ -22,19 +24,31 @@ def main(res_heating_share, industry_share, tertiary_share, nuts2_id, output_dir
                     "label": "Residential heating",
                     "borderColor": "#3CAEA7",
                     "backgroundColor": "rgba(254, 124, 96, 0)",
-                    "data": residential_heating_profile_monthly
+                    "data": res_heating_profile_monthly
                     },
                     {
-                        "label": "Tertiary sector",
-                        "borderColor": "##3C8EB4",
-                        "backgroundColor": "rgba(254, 124, 96, 0)",
-                        "data": tertiary_profile_monthly
+                    "label": "Residential warm water supply",
+                    "borderColor": "#3CAEA7",
+                    "backgroundColor": "rgba(254, 124, 96, 0)",
+                    "data": res_shw_profile_monthly
                     },
                     {
-                        "label": "Effective",
-                        "borderColor": "#3C63BA",
-                        "backgroundColor": "rgba(254, 124, 96, 0)",
-                        "data": effective_profile_monthly
+                    "label": "Tertiary heating",
+                    "borderColor": "##3C8EB4",
+                    "backgroundColor": "rgba(254, 124, 96, 0)",
+                    "data": ter_heating_profile_monthly
+                    },
+                    {
+                    "label": "Tertiary warm water supply",
+                    "borderColor": "##3C8EB4",
+                    "backgroundColor": "rgba(254, 124, 96, 0)",
+                    "data": ter_shw_profile_monthly
+                    },
+                    {
+                    "label": "Effective",
+                    "borderColor": "#3C63BA",
+                    "backgroundColor": "rgba(254, 124, 96, 0)",
+                    "data": effective_profile_monthly
                     }
                     ]
             }
