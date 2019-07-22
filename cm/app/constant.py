@@ -70,7 +70,6 @@ SIGNATURE = {
         # "lp_industry_chemicals_and_petrochemicals_yearlong_2018"
     ],
     "type_layer_needed": [
-        "heat",
         "nuts_id_number"
     ],
 
