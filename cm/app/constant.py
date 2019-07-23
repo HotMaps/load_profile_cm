@@ -59,7 +59,9 @@ SIGNATURE = {
         "heat_tot_curr_density_tif",
         "heat_res_curr_density_tif",
         "heat_nonres_curr_density_tif",
-        "nuts_id_number"
+        "nuts_id_number",
+        "gfa_res_curr_density",
+        "gfa_nonres_curr_density"
     ],
     "vectors_needed": [
         # "lp_residential_shw_and_heating_yearlong_2010",

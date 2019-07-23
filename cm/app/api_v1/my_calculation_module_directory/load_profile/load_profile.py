@@ -15,7 +15,7 @@ def get_value_at_point(arr, gt, pos):
   y = int((pos[1] - gt[3])/gt[5])
   return arr[y, x]
 
-def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_ids, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, nuts_id_number, output_directory):
+def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_ids, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_directory):
 
     industrial_subsector_map = {"Iron and steel": "iron_and_steel", "Refineries": "chemicals_and_petrochemicals",
                                 "Chemical industry": "chemicals_and_petrochemicals", "Cement": "non_metalic_minerals",
@@ -35,8 +35,14 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     residential_heating_profile = ad_residential_heating_profile_local(nuts2_ids)
     tertiary_profiles = ad_tertiary_profile_local(nuts2_ids)
 
-    warm_water_supply_density_res = 1
-    warm_water_supply_density_ter = 0.2
+    warm_water_density_res = {"AT": 21.67, "BE": 31.95, "BG": 12.93, "HR": 21.38, "CY": 8.80, "CZ": 22.83, "DK": 9.64,
+                              "EE": 14.35, "FI": 10.15, "FR": 9.66, "DE": 8.27, "EL": 12.51, "HU": 13.66, "IE": 15.91,
+                              "IT": 14.01, "LV": 15.71, "LT": 13.36, "LU": 8.29, "MT": 10.99, "NL": 8.91, "PL": 10.00,
+                              "PT": 9.48, "RO": 11.48, "SK": 21.51, "SI": 21.74, "ES": 23.34, "SE": 13.54, "UK": 49.03}
+    warm_water_density_ter = {"AT": 6.57, "BE": 13.88, "BG": 15.88, "HR": 9.42, "CY": 6.26, "CZ": 9.18, "DK": 8.03,
+                              "EE": 14.13, "FI": 10.52, "FR": 9.57, "DE": 3.05, "EL": 6.99, "HU": 9.51, "IE": 10.87,
+                              "IT": 5.62, "LV": 7.16, "LT": 10.46, "LU": 7.2, "MT": 10.45, "NL": 6.89, "PL": 9.55,
+                              "PT": 21.47, "RO": 13.85, "SK": 8.49, "SI": 27.73, "ES": 12.44, "SE": 19.62, "UK": 13.45}
 
     if isinstance(heat_density_raster_total, np.ndarray):
         hdm_arr_total = heat_density_raster_total
@@ -53,6 +59,16 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     else:
         hdm_arr_nonres, gt_nonres = raster_array(heat_density_raster_nonres, return_gt=True)
 
+    if isinstance(gfa_res_curr_density, np.ndarray):
+        gfa_res_arr = gfa_res_curr_density
+    else:
+        gfa_res_arr, gt_fra_res = raster_array(gfa_res_curr_density, return_gt=True)
+
+    if isinstance(gfa_nonres_curr_density, np.ndarray):
+        gfa_nonres_arr = gfa_nonres_curr_density
+    else:
+        gfa_nonres_arr, gt_fra_nonres = raster_array(gfa_nonres_curr_density, return_gt=True)
+
     if isinstance(nuts_id_number, np.ndarray):
         nuts_id_number = heat_density_raster_nonres
     else:
@@ -67,6 +83,8 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     total_heat_per_nuts = []
     res_heat_per_nuts = []
     nonres_heat_per_nuts = []
+    gfa_res_per_nuts = []
+    gfa_nonres_per_nuts = []
     surface_area_per_nuts = []
     nuts = []
     for nuts_id in nuts_ids:
@@ -79,6 +97,8 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
                 total_heat_per_nuts.append(np.sum(hdm_arr_total[ind]))   # GWh
                 res_heat_per_nuts.append(np.sum(hdm_arr_res[ind]))   # GWh
                 nonres_heat_per_nuts.append(np.sum(hdm_arr_nonres[ind]))   # GWh
+                gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))
+                gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))
 
     # normalize loaded profiles
     normalized_heat_profiles = dict()
@@ -117,17 +137,17 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     res_shw_profile = np.zeros(8760)
     ter_heating_profile = np.zeros(8760)
     ter_shw_profile = np.zeros(8760)
-    for nuts_id, res_heat, surface in zip(nuts, res_heat_per_nuts, surface_area_per_nuts):
+    for nuts_id, res_heat, surface, gfa_res in zip(nuts, res_heat_per_nuts, surface_area_per_nuts, gfa_res_per_nuts):
         res_heating_profile = res_heating_profile + normalized_heat_profiles["residential_heating"][nuts_id] *\
-            (res_heat - surface * warm_water_supply_density_res * 1000)
-        res_shw_profile = res_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] *\
-            surface * warm_water_supply_density_res * 1000
+            (res_heat - gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3)
+        res_shw_profile = res_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] * \
+                          gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3
 
-    for nuts_id, ter_heat, surface in zip(nuts, nonres_heat_per_nuts, surface_area_per_nuts):
+    for nuts_id, ter_heat, surface, gfa_nonres in zip(nuts, nonres_heat_per_nuts, surface_area_per_nuts, gfa_nonres_per_nuts):
         ter_heating_profile = ter_heating_profile + normalized_heat_profiles["residential_heating"][nuts_id] *\
-            (ter_heat - surface * warm_water_supply_density_ter * 1000)
-        ter_shw_profile = ter_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] *\
-            surface * warm_water_supply_density_ter * 1000
+            (ter_heat - gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3)
+        ter_shw_profile = ter_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] * \
+            gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3
 
     effective_profile = industry_profile + res_heating_profile + res_shw_profile + ter_heating_profile + ter_shw_profile
 
@@ -136,12 +156,12 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     data = pd.DataFrame(data, columns=["hour", "load"])
     data.to_csv(output_directory, index=False)
 
-    industry_profile_monthly = np.sum(np.reshape(industry_profile, (12, 730)), axis=1).tolist()
-    res_heating_profile_monthly = np.sum(np.reshape(res_heating_profile, (12, 730)), axis=1).tolist()
-    res_shw_profile_monthly = np.sum(np.reshape(res_shw_profile, (12, 730)), axis=1).tolist()
-    ter_heating_profile_monthly = np.sum(np.reshape(ter_heating_profile, (12, 730)), axis=1).tolist()
-    ter_shw_profile_monthly = np.sum(np.reshape(ter_shw_profile, (12, 730)), axis=1).tolist()
-    effective_profile_monthly = np.sum(np.reshape(effective_profile, (12, 730)), axis=1).tolist()
+    industry_profile_monthly = np.mean(np.reshape(industry_profile, (12, 730)), axis=1).tolist()
+    res_heating_profile_monthly = np.mean(np.reshape(res_heating_profile, (12, 730)), axis=1).tolist()
+    res_shw_profile_monthly = np.mean(np.reshape(res_shw_profile, (12, 730)), axis=1).tolist()
+    ter_heating_profile_monthly = np.mean(np.reshape(ter_heating_profile, (12, 730)), axis=1).tolist()
+    ter_shw_profile_monthly = np.mean(np.reshape(ter_shw_profile, (12, 730)), axis=1).tolist()
+    effective_profile_monthly = np.mean(np.reshape(effective_profile, (12, 730)), axis=1).tolist()
 
     return industry_profile_monthly, res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
         ter_shw_profile_monthly, effective_profile_monthly

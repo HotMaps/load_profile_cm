@@ -48,6 +48,14 @@ class TestAPI(unittest.TestCase):
         nuts_id_save_path = UPLOAD_DIRECTORY + "/nuts.tif"
         copyfile(nuts_id, nuts_id_save_path)
 
+        gfa_res_curr = "tests/data/gfa_res_curr_density_pl22.tif"
+        gfa_res_curr_save_path = UPLOAD_DIRECTORY + "/gfa_res.tif"
+        copyfile(gfa_res_curr, gfa_res_curr_save_path)
+
+        gfa_nonres_curr = "tests/data/gfa_nonres_curr_density_pl22.tif"
+        gfa_nonres_curr_save_path = UPLOAD_DIRECTORY + "/gfa_nonres.tif"
+        copyfile(gfa_nonres_curr, gfa_nonres_curr_save_path)
+
         inputs_raster_selection = {}
         inputs_parameter_selection = {}
         inputs_vector_selection = {}
@@ -81,6 +89,8 @@ class TestAPI(unittest.TestCase):
         inputs_raster_selection["heat_tot_curr_density_tif"] = heat_total_save_path
         inputs_raster_selection["heat_res_curr_density_tif"] = heat_res_save_path
         inputs_raster_selection["heat_nonres_curr_density_tif"] = heat_nonres_save_path
+        inputs_raster_selection["gfa_res_curr_density"] = gfa_res_curr_save_path
+        inputs_raster_selection["gfa_nonres_curr_density"] = gfa_nonres_curr_save_path
         inputs_raster_selection["nuts_id_number"] = nuts_id_save_path
 
         # register the calculation module a

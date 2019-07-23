@@ -21,6 +21,8 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
     heat_density_raster_total = inputs_raster_selection["heat_tot_curr_density_tif"]
     heat_density_raster_res = inputs_raster_selection["heat_res_curr_density_tif"]
     heat_density_raster_nonres = inputs_raster_selection["heat_nonres_curr_density_tif"]
+    gfa_res_curr_density = inputs_raster_selection["gfa_res_curr_density"]
+    gfa_nonres_curr_density = inputs_raster_selection["gfa_nonres_curr_density"]
     nuts_id_number = inputs_raster_selection["nuts_id_number"]
 
     res_heating_share = float(inputs_parameter_selection["res_heating_share"])
@@ -41,7 +43,7 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
 
     output_csv_path_1 = generate_output_file_csv(output_directory)
 
-    graphics = run_cm.main(res_heating_share, industry_share, tertiary_share, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, nuts_id_number, output_csv_path_1)
+    graphics = run_cm.main(res_heating_share, industry_share, tertiary_share, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_csv_path_1)
     
     result = dict()
 

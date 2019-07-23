@@ -1,11 +1,11 @@
 from .load_profile.load_profile import load_profile_gen
 
 
-def main(res_heating_share, industry_share, tertiary_share, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, nuts_id_number, output_directory):
+def main(res_heating_share, industry_share, tertiary_share, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_directory):
     industry_profile_monthly,res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
     ter_shw_profile_monthly, effective_profile_monthly =\
         load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id, heat_density_raster_total,
-                         heat_density_raster_res, heat_density_raster_nonres, nuts_id_number, output_directory)
+                         heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_directory)
 
     graphics = [{
             "type": "line",
