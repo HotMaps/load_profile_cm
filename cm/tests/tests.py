@@ -86,9 +86,9 @@ class TestAPI(unittest.TestCase):
         inputs_parameter_selection["tertiary_share"] = 0.33
         nuts = ['PL22']
 
-        inputs_raster_selection["heat_tot_curr_density_tif"] = heat_total_save_path
-        inputs_raster_selection["heat_res_curr_density_tif"] = heat_res_save_path
-        inputs_raster_selection["heat_nonres_curr_density_tif"] = heat_nonres_save_path
+        inputs_raster_selection["heat_tot_curr_density"] = heat_total_save_path
+        inputs_raster_selection["heat_res_curr_density"] = heat_res_save_path
+        inputs_raster_selection["heat_nonres_curr_density"] = heat_nonres_save_path
         inputs_raster_selection["gfa_res_curr_density"] = gfa_res_curr_save_path
         inputs_raster_selection["gfa_nonres_curr_density"] = gfa_nonres_curr_save_path
         inputs_raster_selection["nuts_id_number"] = nuts_id_save_path

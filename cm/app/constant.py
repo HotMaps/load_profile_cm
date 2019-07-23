@@ -56,9 +56,9 @@ SIGNATURE = {
     "category": "Buildings",
     "cm_name": CM_NAME,
     "layers_needed": [
-        "heat_tot_curr_density_tif",
-        "heat_res_curr_density_tif",
-        "heat_nonres_curr_density_tif",
+        "heat_tot_curr_density",
+        "heat_res_curr_density",
+        "heat_nonres_curr_density",
         "nuts_id_number",
         "gfa_res_curr_density",
         "gfa_nonres_curr_density"

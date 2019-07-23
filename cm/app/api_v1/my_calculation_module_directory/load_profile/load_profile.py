@@ -35,6 +35,7 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     residential_heating_profile = ad_residential_heating_profile_local(nuts2_ids)
     tertiary_profiles = ad_tertiary_profile_local(nuts2_ids)
 
+    # kWh/m^2/a
     warm_water_density_res = {"AT": 21.67, "BE": 31.95, "BG": 12.93, "HR": 21.38, "CY": 8.80, "CZ": 22.83, "DK": 9.64,
                               "EE": 14.35, "FI": 10.15, "FR": 9.66, "DE": 8.27, "EL": 12.51, "HU": 13.66, "IE": 15.91,
                               "IT": 14.01, "LV": 15.71, "LT": 13.36, "LU": 8.29, "MT": 10.99, "NL": 8.91, "PL": 10.00,
@@ -97,8 +98,8 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
                 total_heat_per_nuts.append(np.sum(hdm_arr_total[ind]))   # GWh
                 res_heat_per_nuts.append(np.sum(hdm_arr_res[ind]))   # GWh
                 nonres_heat_per_nuts.append(np.sum(hdm_arr_nonres[ind]))   # GWh
-                gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))
-                gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))
+                gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))   # m^2
+                gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))     # m^2
 
     # normalize loaded profiles
     normalized_heat_profiles = dict()
@@ -140,13 +141,13 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     for nuts_id, res_heat, surface, gfa_res in zip(nuts, res_heat_per_nuts, surface_area_per_nuts, gfa_res_per_nuts):
         res_heating_profile = res_heating_profile + normalized_heat_profiles["residential_heating"][nuts_id] *\
             (res_heat - gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3)
-        res_shw_profile = res_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] * \
-                          gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3
+        res_shw_profile = res_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] *\
+            gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3
 
     for nuts_id, ter_heat, surface, gfa_nonres in zip(nuts, nonres_heat_per_nuts, surface_area_per_nuts, gfa_nonres_per_nuts):
         ter_heating_profile = ter_heating_profile + normalized_heat_profiles["residential_heating"][nuts_id] *\
             (ter_heat - gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3)
-        ter_shw_profile = ter_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] * \
+        ter_shw_profile = ter_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] *\
             gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3
 
     effective_profile = industry_profile + res_heating_profile + res_shw_profile + ter_heating_profile + ter_shw_profile
@@ -165,9 +166,3 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
 
     return industry_profile_monthly, res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
         ter_shw_profile_monthly, effective_profile_monthly
-
-
-
-
-
-

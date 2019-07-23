@@ -18,9 +18,9 @@ from .my_calculation_module_directory import run_cm
 def calculation(output_directory, inputs_raster_selection, inputs_vector_selection, inputs_parameter_selection, nuts):
     """ def calculation()"""
 
-    heat_density_raster_total = inputs_raster_selection["heat_tot_curr_density_tif"]
-    heat_density_raster_res = inputs_raster_selection["heat_res_curr_density_tif"]
-    heat_density_raster_nonres = inputs_raster_selection["heat_nonres_curr_density_tif"]
+    heat_density_raster_total = inputs_raster_selection["heat_tot_curr_density"]
+    heat_density_raster_res = inputs_raster_selection["heat_res_curr_density"]
+    heat_density_raster_nonres = inputs_raster_selection["heat_nonres_curr_density"]
     gfa_res_curr_density = inputs_raster_selection["gfa_res_curr_density"]
     gfa_nonres_curr_density = inputs_raster_selection["gfa_nonres_curr_density"]
     nuts_id_number = inputs_raster_selection["nuts_id_number"]
