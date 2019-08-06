@@ -72,7 +72,9 @@ SIGNATURE = {
         # "lp_industry_chemicals_and_petrochemicals_yearlong_2018"
     ],
     "type_layer_needed": [
-        "nuts_id_number"
+        "nuts_id_number",
+        "heat",
+        "gross_floor_area"
     ],
 
     "cm_url": "Do not add something",
