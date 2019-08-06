@@ -74,6 +74,7 @@ SIGNATURE = {
     "type_layer_needed": [
         "nuts_id_number",
         "heat",
+        "gross_floor_area",
         "gross_floor_area"
     ],
 
