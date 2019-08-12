@@ -23,17 +23,8 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
                                 "Non-metallic mineral products": "non_metalic_minerals", "Paper and printing": "paper",
                                 "Non-ferrous metals": "iron_and_steel", "Other non-classified": "food_and_tobacco"}
 
-    nuts0_ids = []
-    for id_ in nuts2_ids:
-        nuts0_ids.append(id_[:2])
 
-    heat_sources = ad_industrial_database_local(nuts2_ids)
-    # load heating profiles for sources and sinks
-    # industry_profiles = ad_industry_profiles_dict(source_profiles)
-    # residential_heating_profile = ad_residential_heating_profile_dict(sink_profiles)
-    industry_profiles = ad_industry_profiles_local(nuts0_ids)
-    residential_heating_profile = ad_residential_heating_profile_local(nuts2_ids)
-    tertiary_profiles = ad_tertiary_profile_local(nuts2_ids)
+
 
     # kWh/m^2/a
     warm_water_density_res = {"AT": 21.67, "BE": 31.95, "BG": 12.93, "HR": 21.38, "CY": 8.80, "CZ": 22.83, "DK": 9.64,
@@ -75,13 +66,28 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     else:
         nuts_id_number, gt_nuts = raster_array(nuts_id_number, return_gt=True)
 
+    nuts2_ids = []
+
     nuts_id_map = ad_nuts_id()
-
-    """
-    id = get_value_at_point(nuts_id_number, gt_nuts, (4968964.4, 3121416.0))
-    nuts = nuts_id_map[nuts_id_map["id"] == id].values[0][1]
-
     nuts_ids = np.unique(nuts_id_number)
+    for nuts_id in nuts_ids:
+        if nuts_id != 0:    # don't consider areas with no nuts id
+            nuts2_ids.append(nuts_id_map[nuts_id_map["id"] == nuts_id].values[0][1][0:4])
+
+    nuts0_ids = []
+    for id_ in nuts2_ids:
+        nuts0_ids.append(id_[:2])
+
+
+    heat_sources = ad_industrial_database_local(nuts2_ids)
+    # load heating profiles for sources and sinks
+    # industry_profiles = ad_industry_profiles_dict(source_profiles)
+    # residential_heating_profile = ad_residential_heating_profile_dict(sink_profiles)
+    industry_profiles = ad_industry_profiles_local(nuts0_ids)
+    residential_heating_profile = ad_residential_heating_profile_local(nuts2_ids)
+    tertiary_profiles = ad_tertiary_profile_local(nuts2_ids)
+
+
     total_heat_per_nuts = []
     res_heat_per_nuts = []
     nonres_heat_per_nuts = []
@@ -92,15 +98,14 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     for nuts_id in nuts_ids:
         if nuts_id != 0:    # don't consider areas with no nuts id
             nuts2_id = nuts_id_map[nuts_id_map["id"] == nuts_id].values[0][1][0:4]
-            if nuts2_id in nuts2_ids:   # check if load profile is available
-                nuts.append(nuts2_id)
-                ind = nuts_id_number == nuts_id
-                surface_area_per_nuts.append(np.sum(ind)*0.01)  # each tile is 0.01 km^2
-                total_heat_per_nuts.append(np.sum(hdm_arr_total[ind]))   # GWh
-                res_heat_per_nuts.append(np.sum(hdm_arr_res[ind]))   # GWh
-                nonres_heat_per_nuts.append(np.sum(hdm_arr_nonres[ind]))   # GWh
-                gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))   # m^2
-                gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))     # m^2
+            nuts.append(nuts2_id)
+            ind = nuts_id_number == nuts_id
+            surface_area_per_nuts.append(np.sum(ind)*0.01)  # each tile is 0.01 km^2
+            total_heat_per_nuts.append(np.sum(hdm_arr_total[ind]))   # GWh
+            res_heat_per_nuts.append(np.sum(hdm_arr_res[ind]))   # GWh
+            nonres_heat_per_nuts.append(np.sum(hdm_arr_nonres[ind]))   # GWh
+            gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))   # m^2
+            gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))     # m^2
     
     # normalize loaded profiles
     normalized_heat_profiles = dict()
@@ -163,9 +168,9 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     res_shw_profile_monthly = np.mean(np.reshape(res_shw_profile, (12, 730)), axis=1).tolist()
     ter_heating_profile_monthly = np.mean(np.reshape(ter_heating_profile, (12, 730)), axis=1).tolist()
     ter_shw_profile_monthly = np.mean(np.reshape(ter_shw_profile, (12, 730)), axis=1).tolist()
-    effective_profile_monthly = np.mean(np.reshape(effective_profile, (12, 730)), axis=1).tolist()"""
+    effective_profile_monthly = np.mean(np.reshape(effective_profile, (12, 730)), axis=1).tolist()
 
-    return [0] * 12, [0]*12, [0]*12, [0]*12, [0]*12, [0]*12,
+    #return [0] * 12, [0]*12, [0]*12, [0]*12, [0]*12, [0]*12,
 
     return industry_profile_monthly, res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
         ter_shw_profile_monthly, effective_profile_monthly
