@@ -77,6 +77,7 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
 
     nuts_id_map = ad_nuts_id()
 
+    """
     id = get_value_at_point(nuts_id_number, gt_nuts, (4968964.4, 3121416.0))
     nuts = nuts_id_map[nuts_id_map["id"] == id].values[0][1]
 
@@ -100,7 +101,7 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
                 nonres_heat_per_nuts.append(np.sum(hdm_arr_nonres[ind]))   # GWh
                 gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))   # m^2
                 gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))     # m^2
-    """
+    
     # normalize loaded profiles
     normalized_heat_profiles = dict()
     normalized_heat_profiles["residential_heating"] = create_normalized_profiles(residential_heating_profile[0],
