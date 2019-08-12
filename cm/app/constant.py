@@ -20,33 +20,25 @@ TRANFER_PROTOCOLE ='http://'
 
 INPUTS_CALCULATION_MODULE = [
 
-    {'input_name': 'Residential heating',
+    {'input_name': 'Residential heating factor',
      'input_type': 'input',
-     'input_parameter_name': 'res_heating_share',
-     'input_value': 0.33,
-     'input_unit': 'none',
+     'input_parameter_name': 'res_heating_factor',
+     'input_value': 1,
+     'input_unit': ' ',
      'input_min': 0,
      'input_max': 1,
      'cm_id': CM_ID
      },
-    {'input_name': 'Industry',
+    {'input_name': 'Tertiary heating factor',
      'input_type': 'input',
-     'input_parameter_name': 'industry_share',
-     'input_value': 0.33,
-     'input_unit': 'none',
+     'input_parameter_name': 'ter_heating_factor',
+     'input_value': 1,
+     'input_unit': ' ',
      'input_min': 0,
      'input_max': 1,
      'cm_id': CM_ID
      },
-    {'input_name': 'Tertiary heating',
-     'input_type': 'input',
-     'input_parameter_name': 'tertiary_share',
-     'input_value': 0.33,
-     'input_unit': 'none',
-     'input_min': 0,
-     'input_max': 1,
-     'cm_id': CM_ID
-     }
+
 
 ]
 

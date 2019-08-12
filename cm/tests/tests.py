@@ -81,9 +81,8 @@ class TestAPI(unittest.TestCase):
         #with open('tests/data/industrial_Database_dk.json', 'r') as file:
         #    inputs_vector_selection["industrial_database"] = json_lib.load(file)
 
-        inputs_parameter_selection["res_heating_share"] = 0.33
-        inputs_parameter_selection["industry_share"] = 0.33
-        inputs_parameter_selection["tertiary_share"] = 0.33
+        inputs_parameter_selection["res_heating_factor"] = 1
+        inputs_parameter_selection["ter_heating_factor"] = 1
         nuts = ['PL22']
 
         inputs_raster_selection["heat_tot_curr_density"] = heat_total_save_path
