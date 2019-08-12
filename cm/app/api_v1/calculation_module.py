@@ -43,12 +43,40 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
 
     output_csv_path_1 = generate_output_file_csv(output_directory)
 
-    graphics = run_cm.main(res_heating_factor, ter_heating_factor, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_csv_path_1)
+    graphics, total_industry, total_res_heating, total_res_shw, total_ter_heating,\
+        total_ter_shw, total_heat = run_cm.main(res_heating_factor, ter_heating_factor, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_csv_path_1)
     
+    def round_to_n(x, n):
+        length = 0
+        if x > 1:
+            while x > 1:
+                x /= 10
+                length += 1
+        elif x == 0:
+            return 0
+        else:
+            while x < 1:
+                x *= 10
+                length -= 1
+
+        return round(x, n) * 10 ** length
+
+
     result = dict()
 
     result["graphics"] = graphics
-    
+
+    result['indicator'] = [{"unit": "GWh", "name": "Total heat demand in GWh by industry",
+                        "value": str(round_to_n(total_industry, 3))},
+                       {"unit": "GWh", "name": "Total heat demand in GWh by residential heating",
+                        "value": str(round_to_n(total_res_heating, 3))},
+                           {"unit": "GWh", "name": "Total heat demand in GWh by residential warm water supply",
+                        "value": str(round_to_n(total_res_shw,3))},
+                           {"unit": "GWh", "name": "Total heat demand in GWh by tertiary sector heating",
+                        "value": str(round_to_n(total_ter_heating,3))},
+                           {"unit": "GWh", "name": "Total heat demand in GWh by tertiary sector warm water supply",
+                        "value": str(round_to_n(total_ter_shw,3))}]
+
     result["csv_files"] = [{"Load profile": "csv 1", "path": output_csv_path_1}]
 
     result['name'] = CM_NAME

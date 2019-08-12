@@ -161,6 +161,13 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, nuts2_ids, heat_den
 
     effective_profile = industry_profile + res_heating_profile + res_shw_profile + ter_heating_profile + ter_shw_profile
 
+    total_industry = np.sum(industry_profile) / 1000    # GWh
+    total_res_heating = np.sum(res_heating_profile) / 1000  # GWh
+    total_res_shw = np.sum(res_shw_profile) / 1000  # GWh
+    total_ter_heating = np.sum(ter_heating_profile) / 1000  # GWh
+    total_ter_shw = np.sum(ter_shw_profile) / 1000  # GWh
+    total_heat = np.sum(effective_profile) / 1000   # GWh
+
     data = np.array([[x for x in range(1, 8761)], effective_profile])
     data = data.transpose()
     data = pd.DataFrame(data, columns=["hour", "load"])
@@ -175,4 +182,5 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, nuts2_ids, heat_den
 
 
     return industry_profile_monthly, res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
-        ter_shw_profile_monthly, effective_profile_monthly
+        ter_shw_profile_monthly, effective_profile_monthly, total_industry, total_res_heating, total_res_shw, total_ter_heating,\
+        total_ter_shw, total_heat

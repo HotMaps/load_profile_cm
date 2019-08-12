@@ -3,14 +3,15 @@ from .load_profile.load_profile import load_profile_gen
 
 def main(res_heating_factor, ter_heating_factor, nuts2_id, heat_density_raster_total, heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_directory):
     industry_profile_monthly,res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
-    ter_shw_profile_monthly, effective_profile_monthly =\
+    ter_shw_profile_monthly, effective_profile_monthly, total_industry, total_res_heating, total_res_shw, total_ter_heating,\
+        total_ter_shw, total_heat =\
         load_profile_gen(res_heating_factor, ter_heating_factor, nuts2_id, heat_density_raster_total,
                          heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_directory)
 
     graphics = [{
             "type": "line",
             "xLabel": "Month",
-            "yLabel": "Load",
+            "yLabel": "Power in MW",
             "data": {
                 "labels": ["January", "February", "March", "April", "May", "June", "July", "August", "September",
                            "October", "November", "December"],
@@ -53,4 +54,4 @@ def main(res_heating_factor, ter_heating_factor, nuts2_id, heat_density_raster_t
                     ]
             }
         }]
-    return graphics
+    return graphics, total_industry, total_res_heating, total_res_shw, total_ter_heating, total_ter_shw, total_heat
