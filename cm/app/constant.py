@@ -72,10 +72,12 @@ SIGNATURE = {
         # "lp_industry_chemicals_and_petrochemicals_yearlong_2018"
     ],
     "type_layer_needed": [
+        "heat_tot_curr_density",
+        "heat_res_curr_density",
+        "heat_nonres_curr_density",
         "nuts_id_number",
-        "heat",
-        "gross_floor_area",
-        "gross_floor_area"
+        "gfa_res_curr_density",
+        "gfa_nonres_curr_density"
     ],
 
     "cm_url": "Do not add something",
