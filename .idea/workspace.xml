@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cb168f1-a4be-4f34-bea2-a75a1911a24d" name="Default Changelist" comment="" />
+    <list default="true" id="8cb168f1-a4be-4f34-bea2-a75a1911a24d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/load_profile_cm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/load_profile_cm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,49 +22,12 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1620912844">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.3" value="3" />
-          <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Python" value="23" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="14" />
-          <entry key="py" value="3575" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="3575" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/app/api_v1/calculation_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="615">
               <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
             </state>
           </provider>
@@ -68,21 +36,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
+            <state relative-caret-position="2295">
               <caret line="158" column="61" selection-start-line="158" selection-start-column="61" selection-end-line="158" selection-end-column="61" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1563871171331" expanded="true" signature="9952:9953" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+            <state relative-caret-position="930">
+              <caret line="92" column="82" selection-start-line="92" selection-start-column="82" selection-end-line="92" selection-end-column="82" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -90,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/app/constant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="76" column="26" lean-forward="true" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+            <state relative-caret-position="1140">
+              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -102,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="120">
               <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
             </state>
           </provider>
@@ -111,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/app/api_v1/transactions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2465">
+            <state relative-caret-position="2175">
               <caret line="159" column="42" selection-start-line="159" selection-start-column="42" selection-end-line="159" selection-end-column="42" />
             </state>
           </provider>
@@ -120,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/tests/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
+            <state relative-caret-position="1260">
               <caret line="91" column="80" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -132,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="225">
               <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
             </state>
           </provider>
@@ -178,7 +145,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Course" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,7 +198,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Course" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -340,9 +307,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1680" y="-1" width="2560" height="1421" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23972602" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2396368" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -377,9 +345,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/excess_heat/CM1.py" />
@@ -427,48 +392,12 @@
     <entry file="file://$PROJECT_DIR$/cm/app/exceptions.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/run_cm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/dh_potential/CM_TUW4/district_heating_potential.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="132" column="40" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/dh_potential/CM_TUW1/read_raster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/constant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="127" column="58" selection-start-line="117" selection-end-line="133" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/tests/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/calculation_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="27" column="29" lean-forward="true" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/run_cm.py" />
+    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/dh_potential/CM_TUW4/district_heating_potential.py" />
+    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/dh_potential/CM_TUW1/read_raster.py" />
+    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/constant.py" />
+    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/tests/tests.py" />
+    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/calculation_module.py" />
     <entry file="file://$PROJECT_DIR$/cm/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -487,38 +416,43 @@
         <state relative-caret-position="-500" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Image_Scrapping/scrapper.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Image Scrapping/scrapper.py">
+    <entry file="file://$PROJECT_DIR$/../../Image_Scrapping/scrapper.py" />
+    <entry file="file://$PROJECT_DIR$/../../Image Scrapping/scrapper.py" />
+    <entry file="file://$PROJECT_DIR$/../../git/Image Scrapping/scrapper.py" />
+    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/calculation_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41" />
+        <state relative-caret-position="615">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../git/Image Scrapping/scrapper.py">
+    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="76" selection-start-line="76" selection-end-line="76" selection-end-column="59" />
+        <state relative-caret-position="2295">
+          <caret line="158" column="61" selection-start-line="158" selection-start-column="61" selection-end-line="158" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cm/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="120">
           <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cm/app/api_v1/transactions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
+        <state relative-caret-position="2175">
           <caret line="159" column="42" selection-start-line="159" selection-start-column="42" selection-end-line="159" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cm/tests/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
+        <state relative-caret-position="1260">
           <caret line="91" column="80" selection-start-line="91" selection-start-column="80" selection-end-line="91" selection-end-column="80" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -528,43 +462,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="225">
           <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/calculation_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="158" column="61" selection-start-line="158" selection-start-column="61" selection-end-line="158" selection-end-column="61" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1563871171331" expanded="true" signature="9952:9953" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cm/app/constant.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="76" column="26" lean-forward="true" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+        <state relative-caret-position="1140">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="92" column="82" selection-start-line="92" selection-start-column="82" selection-end-line="92" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

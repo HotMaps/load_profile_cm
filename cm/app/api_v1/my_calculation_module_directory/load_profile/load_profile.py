@@ -100,7 +100,7 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
                 nonres_heat_per_nuts.append(np.sum(hdm_arr_nonres[ind]))   # GWh
                 gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))   # m^2
                 gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))     # m^2
-
+    """
     # normalize loaded profiles
     normalized_heat_profiles = dict()
     normalized_heat_profiles["residential_heating"] = create_normalized_profiles(residential_heating_profile[0],
@@ -162,7 +162,9 @@ def load_profile_gen(res_heating_share, industry_share, tertiary_share, nuts2_id
     res_shw_profile_monthly = np.mean(np.reshape(res_shw_profile, (12, 730)), axis=1).tolist()
     ter_heating_profile_monthly = np.mean(np.reshape(ter_heating_profile, (12, 730)), axis=1).tolist()
     ter_shw_profile_monthly = np.mean(np.reshape(ter_shw_profile, (12, 730)), axis=1).tolist()
-    effective_profile_monthly = np.mean(np.reshape(effective_profile, (12, 730)), axis=1).tolist()
+    effective_profile_monthly = np.mean(np.reshape(effective_profile, (12, 730)), axis=1).tolist()"""
+
+    return [0] * 12, [0]*12, [0]*12, [0]*12, [0]*12, [0]*12,
 
     return industry_profile_monthly, res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
         ter_shw_profile_monthly, effective_profile_monthly
