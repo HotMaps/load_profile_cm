@@ -66,16 +66,18 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
 
     result["graphics"] = graphics
 
-    result['indicator'] = [{"unit": "GWh", "name": "Total heat demand in GWh by industry",
+    result['indicator'] = [{"unit": "GWh", "name": "Heat demand in GWh by industry",
                         "value": str(round_to_n(total_industry, 3))},
-                       {"unit": "GWh", "name": "Total heat demand in GWh by residential heating",
+                       {"unit": "GWh", "name": "Heat demand in GWh by residential heating",
                         "value": str(round_to_n(total_res_heating, 3))},
-                           {"unit": "GWh", "name": "Total heat demand in GWh by residential warm water supply",
+                           {"unit": "GWh", "name": "Heat demand in GWh by residential warm water supply",
                         "value": str(round_to_n(total_res_shw,3))},
-                           {"unit": "GWh", "name": "Total heat demand in GWh by tertiary sector heating",
+                           {"unit": "GWh", "name": "Heat demand in GWh by tertiary sector heating",
                         "value": str(round_to_n(total_ter_heating,3))},
-                           {"unit": "GWh", "name": "Total heat demand in GWh by tertiary sector warm water supply",
-                        "value": str(round_to_n(total_ter_shw,3))}]
+                           {"unit": "GWh", "name": "Heat demand in GWh by tertiary sector warm water supply",
+                        "value": str(round_to_n(total_ter_shw,3))},
+                              {"unit": "GWh", "name": "Total heat demand in GWh",
+                        "value": str(round_to_n(total_heat,3))}]
 
     result["csv_files"] = [{"Load profile": "csv 1", "path": output_csv_path_1}]
 
