@@ -48,7 +48,6 @@ SIGNATURE = {
     "category": "Buildings",
     "cm_name": CM_NAME,
     "layers_needed": [
-        "heat_tot_curr_density",
         "heat_res_curr_density",
         "heat_nonres_curr_density",
         "nuts_id_number",
@@ -64,7 +63,6 @@ SIGNATURE = {
         # "lp_industry_chemicals_and_petrochemicals_yearlong_2018"
     ],
     "type_layer_needed": [
-        "heat_tot_curr_density",
         "heat_res_curr_density",
         "heat_nonres_curr_density",
         "nuts_id_number",

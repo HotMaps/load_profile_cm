@@ -32,10 +32,6 @@ class TestAPI(unittest.TestCase):
     def test_compute(self):
         # simulate copy from HTAPI to CM
 
-        heat_total = "tests/data/pl22_total.tif"
-        heat_total_save_path = UPLOAD_DIRECTORY + "/heat_total.tif"
-        copyfile(heat_total, heat_total_save_path)
-
         heat_res = "tests/data/pl22_res.tif"
         heat_res_save_path = UPLOAD_DIRECTORY + "/heat_res.tif"
         copyfile(heat_res, heat_res_save_path)
@@ -83,9 +79,7 @@ class TestAPI(unittest.TestCase):
 
         inputs_parameter_selection["res_heating_factor"] = 1
         inputs_parameter_selection["ter_heating_factor"] = 1
-        nuts = ['PL22']
 
-        inputs_raster_selection["heat_tot_curr_density"] = heat_total_save_path
         inputs_raster_selection["heat_res_curr_density"] = heat_res_save_path
         inputs_raster_selection["heat_nonres_curr_density"] = heat_nonres_save_path
         inputs_raster_selection["gfa_res_curr_density"] = gfa_res_curr_save_path
@@ -96,7 +90,7 @@ class TestAPI(unittest.TestCase):
         payload = {"inputs_raster_selection": inputs_raster_selection,
                    "inputs_parameter_selection": inputs_parameter_selection,
                    "inputs_vector_selection": inputs_vector_selection,
-                   "nuts": nuts}
+                   "nuts": ""}
 
 
         rv, json = self.client.post('computation-module/compute/', data=payload)

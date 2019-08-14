@@ -79,8 +79,8 @@ def ad_residential_heating_profile_local(nuts2_ids):
     path = os.path.join(path, "data")
     path1 = os.path.join(path, "hotmaps_task_2.7_load_profile_residential_heating_yearlong_2010_part1.csv")
     path2 = os.path.join(path, "hotmaps_task_2.7_load_profile_residential_heating_yearlong_2010_part2.csv")
-    path3 = os.path.join(path, "hotmaps_task_2.7_load_profile_tertiary_shw_yearlong_2010_part1.csv")
-    path4 = os.path.join(path, "hotmaps_task_2.7_load_profile_tertiary_shw_yearlong_2010_part2.csv")
+    path3 = os.path.join(path, "data_hotmaps_task_2.7_load_profile_residential_shw_yearlong_2010_part1.csv")
+    path4 = os.path.join(path, "data_hotmaps_task_2.7_load_profile_residential_shw_yearlong_2010_part2.csv")
     paths = [path1, path2]
     # determine delimiter of csv file
     data = pd.DataFrame(columns=("NUTS2_code", "process", "hour", "load"))
