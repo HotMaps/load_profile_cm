@@ -56,7 +56,6 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
 
         return round(x, n) * 10 ** length
 
-
     result = dict()
 
     result["graphics"] = graphics

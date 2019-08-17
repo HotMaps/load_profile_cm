@@ -42,8 +42,6 @@ INPUTS_CALCULATION_MODULE = [
 
 ]
 
-
-
 SIGNATURE = {
     "category": "Buildings",
     "cm_name": CM_NAME,
