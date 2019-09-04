@@ -14,8 +14,8 @@ PORT_DOCKER = 80
 
 #TODO ********************setup this URL depending on which version you are running***************************
 
-CELERY_BROKER_URL = CELERY_BROKER_URL_DOCKER
-PORT = PORT_DOCKER
+CELERY_BROKER_URL = CELERY_BROKER_URL_LOCAL
+PORT = PORT_LOCAL
 
 #TODO ********************setup this URL depending on which version you are running***************************
 
@@ -26,7 +26,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_parameter_name': 'multiplication_factor',
      'input_value': '1',
      'input_priority': 0,
-     'input_unit': 'none',
+     'input_unit': '',
      'input_min': 0,
      'input_max': 10, 'cm_id': CM_ID  # Do no change this value
      },
