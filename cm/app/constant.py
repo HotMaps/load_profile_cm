@@ -26,7 +26,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_value': 1,
      'input_unit': ' ',
      'input_min': 0,
-     'input_max': 1,
+     'input_max': 10,
      'cm_id': CM_ID
      },
     {'input_name': 'Tertiary heating factor',
@@ -35,7 +35,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_value': 1,
      'input_unit': ' ',
      'input_min': 0,
-     'input_max': 1,
+     'input_max': 10,
      'cm_id': CM_ID
      },
     {
@@ -45,7 +45,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_value': 1,
      'input_unit': ' ',
      'input_min': 0,
-     'input_max': 1,
+     'input_max': 10,
      'cm_id': CM_ID
      },
     {'input_name': 'Tertiary hot water supply factor',
@@ -54,7 +54,7 @@ INPUTS_CALCULATION_MODULE = [
      'input_value': 1,
      'input_unit': ' ',
      'input_min': 0,
-     'input_max': 1,
+     'input_max': 10,
      'cm_id': CM_ID
      }
 
