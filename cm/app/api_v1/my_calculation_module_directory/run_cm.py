@@ -17,37 +17,37 @@ def main(res_heating_factor, ter_heating_factor, heat_density_raster_res, heat_d
                            "October", "November", "December"],
                 "datasets": [{
                     "label": "Industry",
-                    "borderColor": "#3CA879",
+                    "borderColor": "#57c635",
                     "backgroundColor": "rgba(62, 149, 205, 0)",
                     "data": industry_profile_monthly
                     },
                     {
                     "label": "Residential heating",
-                    "borderColor": "#3CAEA7",
+                    "borderColor": "#35c6a5",
                     "backgroundColor": "rgba(254, 124, 96, 0)",
                     "data": res_heating_profile_monthly
                     },
                     {
                     "label": "Residential warm water supply",
-                    "borderColor": "#3CAEA7",
+                    "borderColor": "#a535c6",
                     "backgroundColor": "rgba(254, 124, 96, 0)",
                     "data": res_shw_profile_monthly
                     },
                     {
                     "label": "Tertiary heating",
-                    "borderColor": "##3C8EB4",
+                    "borderColor": "#c63557",
                     "backgroundColor": "rgba(254, 124, 96, 0)",
                     "data": ter_heating_profile_monthly
                     },
                     {
                     "label": "Tertiary warm water supply",
-                    "borderColor": "##3C8EB4",
+                    "borderColor": "#c6a535",
                     "backgroundColor": "rgba(254, 124, 96, 0)",
                     "data": ter_shw_profile_monthly
                     },
                     {
                     "label": "Effective",
-                    "borderColor": "#3C63BA",
+                    "borderColor": "#3557c6",
                     "backgroundColor": "rgba(254, 124, 96, 0)",
                     "data": effective_profile_monthly
                     }

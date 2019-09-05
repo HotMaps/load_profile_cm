@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cb168f1-a4be-4f34-bea2-a75a1911a24d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/constant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/tests/tests.py" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/venv/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,184 +19,11 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cm/app/api_v1/calculation_module.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="41" column="86" selection-start-line="41" selection-start-column="86" selection-end-line="41" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-750">
-              <caret line="19" column="112" selection-start-line="19" selection-start-column="112" selection-end-line="19" selection-end-column="112" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cm/app/constant.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cm/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cm/app/api_v1/transactions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1245">
-              <caret line="159" column="42" selection-start-line="159" selection-start-column="42" selection-end-line="159" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cm/tests/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/excess_heat/excess_heat.py" />
-        <option value="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/excess_heat.py" />
-        <option value="$PROJECT_DIR$/cm/app/decorators/caching.py" />
-        <option value="$PROJECT_DIR$/cm/app/exceptions.py" />
-        <option value="$PROJECT_DIR$/cm/config/testing.py" />
-        <option value="$PROJECT_DIR$/cm/requirements.txt" />
-        <option value="$PROJECT_DIR$/cm/Dockerfile" />
-        <option value="$PROJECT_DIR$/Jenkinsfile" />
-        <option value="$PROJECT_DIR$/docker-compose.tests.yml" />
-        <option value="$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/tests/tests.py" />
-        <option value="$PROJECT_DIR$/cm/app/api_v1/transactions.py" />
-        <option value="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py" />
-        <option value="$PROJECT_DIR$/cm/app/constant.py" />
-        <option value="$PROJECT_DIR$/cm/tests/tests.py" />
-        <option value="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" />
-        <option value="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py" />
-        <option value="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="2560" />
-    <option name="height" value="1421" />
-  </component>
+  <component name="ProjectId" id="1QQ9RErkNU0tlmAGFfCrQ40IUfk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Course" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="api_v1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="api_v1" type="462c0819:PsiDirectoryNode" />
-              <item name="my_calculation_module_directory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="api_v1" type="462c0819:PsiDirectoryNode" />
-              <item name="my_calculation_module_directory" type="462c0819:PsiDirectoryNode" />
-              <item name="load_profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="load_profile_cm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="load_profile_cm" type="462c0819:PsiDirectoryNode" />
-              <item name="cm" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -308,183 +128,18 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1421" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2396368" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="UI Designer" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947312" weight="0.3308026" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49947312" weight="0.329718" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Educational.CheckDetails" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3383948" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.3286334" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.329718" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="SciView" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/excess_heat/CM1.py" />
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/excess_heat/excess_heat.py" />
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/sql.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/run_all_local_terminal.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/register_cm.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/wait-for-it.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Jenkinsfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="107" selection-start-line="7" selection-start-column="107" selection-end-line="7" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.tests.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/exceptions.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/run_cm.py" />
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/dh_potential/CM_TUW4/district_heating_potential.py" />
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/my_calculation_module_directory/dh_potential/CM_TUW1/read_raster.py" />
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/constant.py" />
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/tests/tests.py" />
-    <entry file="file://$PROJECT_DIR$/../excess_heat_cm2/excess_heat_cm/cm/app/api_v1/calculation_module.py" />
-    <entry file="file://$PROJECT_DIR$/cm/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/tests/test_client.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/tests/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-500" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Image_Scrapping/scrapper.py" />
-    <entry file="file://$PROJECT_DIR$/../../Image Scrapping/scrapper.py" />
-    <entry file="file://$PROJECT_DIR$/../../git/Image Scrapping/scrapper.py" />
-    <entry file="file://$PROJECT_DIR$/cm/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/transactions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="159" column="42" selection-start-line="159" selection-start-column="42" selection-end-line="159" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/constant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/tests/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/calculation_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="41" column="86" selection-start-line="41" selection-start-column="86" selection-end-line="41" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-750">
-          <caret line="19" column="112" selection-start-line="19" selection-start-column="112" selection-end-line="19" selection-end-column="112" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
