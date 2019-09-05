@@ -26,6 +26,8 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
 
     res_heating_factor = float(inputs_parameter_selection["res_heating_factor"])
     ter_heating_factor = float(inputs_parameter_selection["ter_heating_factor"])
+    res_water_factor = float(inputs_parameter_selection["res_water_factor"])
+    ter_water_factor = float(inputs_parameter_selection["ter_water_factor"])
 
     # lp_chemical = inputs_vector_selection["load_profile_industry_chemicals_and_petrochemicals_yearlong_2018"]
     # lp_food = inputs_vector_selection["load_profile_industry_food_and_tobacco_yearlong_2018"]
@@ -39,7 +41,7 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
     output_csv_path_1 = generate_output_file_csv(output_directory)
 
     graphics, total_industry, total_res_heating, total_res_shw, total_ter_heating,\
-        total_ter_shw, total_heat = run_cm.main(res_heating_factor, ter_heating_factor, heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_csv_path_1)
+        total_ter_shw, total_heat = run_cm.main(res_heating_factor, ter_heating_factor, res_water_factor, ter_water_factor, heat_density_raster_res, heat_density_raster_nonres, gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_csv_path_1)
     
     def round_to_n(x, n):
         length = 0

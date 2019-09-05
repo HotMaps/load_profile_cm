@@ -79,6 +79,8 @@ class TestAPI(unittest.TestCase):
 
         inputs_parameter_selection["res_heating_factor"] = 1
         inputs_parameter_selection["ter_heating_factor"] = 1
+        inputs_parameter_selection["res_water_factor"] = 1
+        inputs_parameter_selection["ter_water_factor"] = 1
 
         inputs_raster_selection["heat_res_curr_density"] = heat_res_save_path
         inputs_raster_selection["heat_nonres_curr_density"] = heat_nonres_save_path

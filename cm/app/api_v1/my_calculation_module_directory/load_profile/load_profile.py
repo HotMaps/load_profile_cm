@@ -11,7 +11,7 @@ from .CM1 import create_normalized_profiles
 np.seterr(divide='ignore', invalid='ignore')
 
 
-def load_profile_gen(res_heating_factor, ter_heating_factor, heat_density_raster_res, heat_density_raster_nonres,
+def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, ter_water_factor, heat_density_raster_res, heat_density_raster_nonres,
                      gfa_res_curr_density, gfa_nonres_curr_density, nuts_id_number, output_directory):
 
     industrial_subsector_map = {"Iron and steel": "iron_and_steel", "Refineries": "chemicals_and_petrochemicals",
@@ -121,6 +121,8 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, heat_density_raster
 
     res_heating_profile = res_heating_profile * res_heating_factor
     ter_heating_profile = ter_heating_profile * ter_heating_factor
+    res_shw_profile = res_shw_profile * res_water_factor
+    ter_shw_profile = ter_shw_profile * ter_water_factor
 
     effective_profile = industry_profile + res_heating_profile + res_shw_profile + ter_heating_profile + ter_shw_profile
 

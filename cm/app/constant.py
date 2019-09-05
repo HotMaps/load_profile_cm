@@ -38,6 +38,25 @@ INPUTS_CALCULATION_MODULE = [
      'input_max': 1,
      'cm_id': CM_ID
      },
+    {
+    'input_name': 'Residential hot water supply factor',
+     'input_type': 'input',
+     'input_parameter_name': 'res_water_factor',
+     'input_value': 1,
+     'input_unit': ' ',
+     'input_min': 0,
+     'input_max': 1,
+     'cm_id': CM_ID
+     },
+    {'input_name': 'Tertiary hot water supply factor',
+     'input_type': 'input',
+     'input_parameter_name': 'ter_water_factor',
+     'input_value': 1,
+     'input_unit': ' ',
+     'input_min': 0,
+     'input_max': 1,
+     'cm_id': CM_ID
+     }
 
 
 ]

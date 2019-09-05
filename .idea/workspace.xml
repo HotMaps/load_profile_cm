@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cb168f1-a4be-4f34-bea2-a75a1911a24d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/calculation_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/load_profile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/run_cm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cm/app/constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cm/tests/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/tests/tests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
