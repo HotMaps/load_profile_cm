@@ -1,25 +1,51 @@
 # Calculation module documentation and guidelines
-
+**To-Do**: General commennt: In this documentation, only the folder my_calculation_module_directory has been explained. Please briefly explain other folders/important scripts.
+**To-Do:** change the title to _"guideline for developing a calculation module for the Hotmaps toolbox"_
 
 ## Table of contents
+**To-Do:** add section the following header.
+- [Introcution](#Introduction)
+
+**To-Do:** add section the following header.
+- [Connect a calculation module into the Hotmaps toolbox](#Connect-a-calculation-module-into-the-Hotmaps-toolbox)
+
 - [Retrieve the CM base for your CM](#Retrieve-the-CM-base-for-your-CM)
+**To-Do:** change the title to _"Retrieve the Hotmaps calculation module fundamentals"_
+
 - [Application Structure](#Application-Structure)
+
+**To-Do:** change the title to _"Caclulation module architecture"_
+
 - [Calculation module inputs](#Calculation-module-inputs)
+**To-Do:** change the title to _"Handling calculation module inputs"_
+
 - [Calculation module outputs](#Calculation-module-outputs)
+
+**To-Do:** change the title to _"Handling calculation module outputs"_
+
 - [CM development guidelines in a local environment](#CM-development-guidelines-in-a-local-environment)
 
+**To-Do:** change the title to _"Calculation module development in a local environment"_
 
-#### Requirements
+
+## Introduction
+**Requirements**
 
 - Having GIT command installed on your computer
 - Having a Python version >= 3.5
 - Having a Gdal version >= 2.0
 
-### Definition
+**Calculation module definition**
 
 A calulation Module (CM) is a plugin for Hotmaps toolbox which is able to extend toolbox functionality.
 
+**To-Do:** delete the following header
 ### How to connect a CM into the Hotmaps toolbox?
+
+
+**To-Do:** use the follwoing header:
+## Connect a calculation module into the Hotmaps toolbox
+
 
 ```
 Registration and hearthbeat:
@@ -40,20 +66,24 @@ _______________________________
 
 ```
 
+**Mostafa: Start of modification:**
 The CM can run on its own, but when it is on the same network as the Hotmaps toolbox API (HTAPI), it will be automatically detected.
-Using Celery queue to register, HTAPI contains heartbeat that will check at anytime if a calculation is running or not. That means the achitecture for CMs is working in realtime.
+Using Celery queue to register, HTAPI contains heartbeat that will check at anytime if a calculation is running or not. In other words, the achitecture is working in realtime and detects new CMs.
+
+**Mostafa: End of modification**
 
 <code><ins>**[To Top](#table-of-contents)**</ins></code>
 
 ###### Calculation module registration:
 
+**To-Do:** in the following text use hyperlink for the CM SIGNITURE. It is not clear hear what it is.
 The HTAPI will retrieve the CM SIGNATURE and modify the frontend to allow the user to use the CM and modify the user interface with the inputs it needs to be ran.
 
 
 ## Retrieve the CM base for your CM
-
-Find below the architecture of the CMs. Each CM inherits from the base calculation module (cm base):
-
+**Mostafa: Start of modification:**
+The architecture of the Hotmaps repositories is illustrated below. Each CM inherits from the base calculation module (cm base; upstream):
+**Mostafa: End of modification:**
 ```
 GIT Repository architecture:
       ___________
@@ -72,11 +102,22 @@ GIT Repository architecture:
 
 ```
 
-1. Create a repository on your Github account named **name_of_my_module**.\
-Create a folder on your computer with the same name and go inside the folder.\
-Let the repository of your new module empty until you retrieve the **base_calculation_module** code.
+**Mostafa: Start of modification:**
+In order to create a Hotmaps repository, follow the belowing steps.
+**Mostafa: End of modification:**
 
-2. Use these following git commands to retrieve the code:
+**Mostafa: Start of modification:**
+1. Create a repository on your Github account and assign a name to it, e.g. **name_of_my_module**.\
+Do **NOT** initialize the reposiany with a license nor a readme file.
+**Mostafa: End of modification:**
+**To-Do:** I usually create a repo under Hotmaps GitHub account and not on my GitHub account.
+
+
+**Mostafa: Start of modification:**
+Create an empty folder on your computer with the same name and go inside the folder.\
+
+2. Use these following git commands to retrieve the code of **base_calculation_module**:
+**Mostafa: End of modification:**
 ``` bash
   git init
   git remote add origin https://github.com/YourUsername/name_of_my_module.git # add a remote link to your repository
@@ -106,9 +147,11 @@ git pull upstream master
 ```
 
 *If you encounter any issue like GIT conflict please contact CREM.*
+**To-Do:** I suggest to provide an Email address.
 
-
-6. Release a version of my CM
+**Mostafa: Start of modification:**
+6. Release a version of your CM
+**Mostafa: End of modification:**
 
   After testing your calculation module you can update the release branch (master branch)
 ```bash
@@ -127,7 +170,10 @@ git tag -a number_of_the_version
 
 ## Application Structure:
 
-Find below, the architecture of the CM:
+**Mostafa: Start of modification:**
+The architecture of a sample Hotmaps CM is illustrated below:
+**Mostafa: End of modification:**
+**To-Do**: add the folder my_calculation_module_directory to the schematic
 
 ```
     cm/
@@ -179,7 +225,11 @@ Find below, the architecture of the CM:
 ```
 
 * `app/requirements.txt` - the list of Python framework  (PyPi) requirements.
-* `app/api_v1/calculation_module.py` - this is the place where the function for the CM belongs
+**Mostafa: Start of modification:**
+* `app/api_v1/calculation_module.py` - hear you can call your CM
+**Mostafa: End of modification:**
+**To-Do:** also explain my_calculation_module_directory
+
 * `app/api_v1/transactions.py` - contains all the requests that enable to interact with the CM
 * `app/constant.py` - contains the constants of the applications the most important constant is the SIGNATURE
 
@@ -189,13 +239,17 @@ Find below, the architecture of the CM:
 
 ## Calculation module inputs
 
-In this section is explained the management of the different kinds of inputs
+**Mostafa: Start of modification:**
+In this section, the management of different input types accepted by Hotmaps base calculation module is explained.
+**Mostafa: End of modification:**
 
 ### Signature inputs
+**To-Do:** I suggest to add all headings up to level 3 or 4 to the table of contents
 
 SIGNATURE describes the parameters needed by the calculation module. This signature can be found in `constant.py`. It must be modified by the developer.
 See below an example for a signature:
 
+**To-Do**: I suggest to add other options like vector_needed to your example in order to provide a complete example.
 ```
     SIGNATURE = {
         "category": "Buildings",
@@ -222,6 +276,9 @@ The signature contains some parameters that are needed by the main webservice HT
 - **category**: category of the calculation module ;
 - **cm_name**: name of the calculation module that will be displayed on the frontend (GUI) ;
 - **layers_needed**: layers needed to run the calculation module, for example:
+**To-Do**: Mention that layers_needed only refers to the rasters (and does not include vector layers)
+
+
 ```bash
     "layers_needed": [
            "heat_density_tot",
@@ -230,10 +287,15 @@ The signature contains some parameters that are needed by the main webservice HT
            "gfa_res_curr_density_lau"
        ],
 ```
+**To-Do:** where can we find the list of layer_needed?
+**To-Do:** is cdd_curr_tif correct?
+**To-Do:** is gfa_res_curr_density_lau correct?
  When the HTAPI detects a CM, it will send a python dictionary named  **inputs_raster_selection**. This dictionary contains the name of the layer (for example *heat_tot_curr_density*) and the name of the files generated by the HATPI.
- Using this value, the CM can directly retrieve a clipped dataset.
 
 - **type_layer_needed**: each layer has a type necessary to the CM. It is particularly needed in order to handle the symbology of the layer. *heat*, *gross_floor_area*, *building_volumes*, *solar_optimal_total* are the different input types possible.
+
+**To-Do:** where can we find the list of type_layer_needed?
+**To-Do:** Does type_layer_needed only required for the symbology? or is it also important for other cases as well?
 
   example:
 ```bash
@@ -243,6 +305,8 @@ The signature contains some parameters that are needed by the main webservice HT
 ```
 
 - **vectors_needed**: vectors needed to run the calculation module, for example:
+
+**To-Do:** Mention that all values in the dictionary are strings.
 ```bash
      "vectors_needed": [
             "heating_technologies_eu28",
@@ -331,6 +395,8 @@ The signature contains some parameters that are needed by the main webservice HT
 
 ### Calculation module inputs, graphic user interface (GUI)
 
+**To-Do:** Change the header to "Calculation module input types shown in the front-end"
+
 The purpose of this part is to give the ability to the developer to build his own user interface.
 The JSON payload is an array of inputs and will be used to modify automatically the user interface. For example:
 
@@ -352,9 +418,14 @@ The JSON payload is an array of inputs and will be used to modify automatically 
 
 #### Inputs parameters
 
+
+**To-Do:** For some of the input tzpes, it is not clear how we should define them. For example, It is not clear how the checkbox is defined? What happens if none of them is selected and so on... It would be great if you could provide a simple example for each one.
+
+
 - **input_name**: name of the CM that will be displayed on the frontend GUI
 
 - **input_type**: the input is the graphical control element that the user needs in order to enter data. There are five possible inputs, see https://getuikit.com/docs/form for more information about the implementation of the frontend GUI.
+
 
   - input: this is a textbox in which the user can enter a value
 
@@ -418,8 +489,11 @@ Find below two examples of inputs, one with a type *input* and the other one wit
 *******************************   
 
 ## Calculation module outputs
+**To-Do:** add the following sentence: In oder to show the outputs of your CM in the front-end, your CM should respect the guidelines defined by base_calculation_module.
 
-The purpose of this part is to give developers the ability to build different kinds of outputs (graphic, layers, indicators). Find below and example:
+**Mostafa: Start of modification**
+The purpose of this part is to give developers the ability to build different kinds of outputs (graphic, layers, indicators). All the outputs should be retunred in form of a dictionary ("result" dictionary). Find below an example:
+**Mostafa: End of modification**
 
 ```python
   "result": {
@@ -459,7 +533,9 @@ The purpose of this part is to give developers the ability to build different ki
 
 ### Indicators
 
-In `transaction.py`, the CM provider can modify the output in order to display as many indicators as he wants on the frontend. This indicator will be displayed on the result panel of the frontend.
+**Mostafa: Start of modification**
+In `transaction.py`, the CM provider can modify the output in order to display as many indicators as he/she wants on the front-end. This indicator will be displayed on the RESULT panel of the front-end.
+**Mostafa: End of modification**
 
 ##### Structure of the indicator output
 
@@ -474,6 +550,9 @@ In `transaction.py`, the CM provider can modify the output in order to display a
 
 #### Raster layers
 
+
+**To-Do:** I suggest to add "symbology" section for the custom type in the raster and vector layers and not after them. Regarding "type", please mention which types are available (for raster and vector) and can be chosen?
+
 ##### Structure of the raster output
 
 - **raster_layers (array):** array of raster layers
@@ -481,8 +560,12 @@ In `transaction.py`, the CM provider can modify the output in order to display a
     - **path (string):** path generated for the geotif file
     - **type (string):** type of the layer generated
 
+**Mostafa: Start of modification**
+In order to generate a path, developers should use the function *generate_output_file_tif()*, which needs the output directory as an argument. This function should be imported to the `calculation_module.py`. The path must be generated on the first lines of *calculation()* function found in `calculation_module.py`.  This funciton For example:
+**Mostafa: End of modification**
 
-The path must be generated on the first lines of *calculation()* function found in `calculation_module.py` and uses the function *generate_output_file_tif()* which needs the output directory as an argument. For example:
+**To-Do:** Use the above explanation for Vector as well.
+
 
 ```python
   output_tif_1 = generate_output_file_tif(output_directory)
@@ -518,10 +601,17 @@ All the layer outputs must be retrieved and added to the **vector_layers** array
 
 #### Symbology
 
+**To-Do:** here, first explain what is symbology and where it is being used and what is its impact (where can the developer expect to see it)
+
+
 ##### Raster
 
 There are two types of symbologies handled, both are recognized with the *type* field of the layer:
   - the predefined symbology : you do not need to create a new symbology because it has already been defined for the type you have chosen. Raster layers have four defined symbologies: *heat*, *gross_floor_area*, *building_volumes*, *solar_optimal_total* ;
+
+**To-Do:** if someone reads the documentation for the first time, for sure will mix up between types and symbology. I think "heat" is at the same time both a type and a symbology. please elaborate this further and make the text more clear.
+
+
 
   - the custom symbology: if ever the symbology of your layer does not already exist, it is possible for you to create it. You simply have to set the *type* on "custom" and add a new field *symbology*. This new field must contain values for:
     - the RGB colors (between 0 and 255 for each of the three)
@@ -564,6 +654,10 @@ The difference between vector and raster layers is that there is an extra step t
 <code><ins>**[To Top](#table-of-contents)**</ins></code>
 
 ### CSV files
+
+**To-Do:** It is not clear that "CSV Files" belongs to which header? is it for input? output? symbology or what? Please put it in a right place.
+
+**To-Do:** an introductory explaination here, will help to understand what do you want to say in this section.
 
 ##### Structure of csv
 
