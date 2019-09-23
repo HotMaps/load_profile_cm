@@ -657,7 +657,7 @@ The difference between vector and raster layers is that there is an extra step t
 
 **To-Do:** It is not clear that "CSV Files" belongs to which header? is it for input? output? symbology or what? Please put it in a right place.
 
-**To-Do:** an introductory explaination here, will help to understand what do you want to say in this section.
+**To-Do:** an introductory explaination here, will help to understand what do you want to say in this section. I suggest to mention that CSVs in Hotmaps could also be GIS data, if they are provided with NUTS/LAU2 codes or by providing 'geometry' column and SRID.
 
 ##### Structure of csv
 
@@ -705,10 +705,14 @@ The purpose of this part is to give the ability to the developer to create graph
   - **yLabel:** define the text displayed on y-axis (ex:Heat power(MW)),
   - **data:** contains label and datasets
       - **labels (string[]) :** x axis labels
+**To-Do:** why only x axis. is this correct?
+
       - **datasets (array):** set of data with its configuration
           -  **label (string) :** serie's label
           -  **backgroundColor (string[]) :** background color of each value to display
           -  **data (number[]) :** values of the serie
+
+**To-Do:** I suggest to provide a complete example for better understanding of creating a chart.
 
 <code><ins>**[To Top](#table-of-contents)**</ins></code>
 
@@ -719,6 +723,9 @@ The purpose of this part is to give the ability to the developer to create graph
 Please find in the link below the list of layers available as input for a CM (ressource name column):
 
 https://docs.google.com/spreadsheets/d/1cGMRWkgIL8jxghrpjIWy6Xf_kS3Dx6LqGNfrCBLQ_GI/edit#gid=1730959780
+
+**To-Do:** Great! this part is very important. However, I don't suggest the use of the provided online document for several reasons: it can be edited by anyone who has the link. It is connected to private google account. the provided workbook is quite large and is difficult to understand. It should have been used for our internal use.
+Therefore, I suggest to create a table here, and list the layers. This would also be much easier to update. Thank you.
 
 *******************************************************************
 
@@ -764,6 +771,7 @@ If the test ran without any error, `constant.py` must be changed in order to
 `calculation_module.py` is a bridge between the CM functions and the CM architecture. The new code must be added to the directory **my_calculation_module_directory**
 
 
+**To-Do:** I suggest to include where the unit-test should be written. Otherwise, runing the test.py returns error.
 
 ### Running my CM with docker
 
