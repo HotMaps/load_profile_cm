@@ -42,25 +42,32 @@ def ad_industry_profiles_local(nuts0_ids):
     :rtype: list [pd.Dataframe, pd.Dataframe, ...].
     """
 
-    file_names = ("hotmaps_task_2.7_load_profile_industry_chemicals_and_petrochemicals_yearlong_2018.csv",
-                  "hotmaps_task_2.7_load_profile_industry_food_and_tobacco_yearlong_2018.csv",
-                  "hotmaps_task_2.7_load_profile_industry_iron_and_steel_yearlong_2018.csv",
-                  "hotmaps_task_2.7_load_profile_industry_non_metalic_minerals_yearlong_2018.csv",
-                  "hotmaps_task_2.7_load_profile_industry_paper_yearlong_2018.csv")
+    folder_names = ("hotmaps_task_2.7_load_profile_industry_chemicals_and_petrochemicals_yearlong_2018",
+                  "hotmaps_task_2.7_load_profile_industry_food_and_tobacco_yearlong_2018",
+                  "hotmaps_task_2.7_load_profile_industry_iron_and_steel_yearlong_2018",
+                  "hotmaps_task_2.7_load_profile_industry_non_metalic_minerals_yearlong_2018",
+                  "hotmaps_task_2.7_load_profile_industry_paper_yearlong_2018")
 
     path = os.path.dirname(
            os.path.dirname(os.path.abspath(__file__)))
     path = os.path.join(path, "data")
 
     data = []
-    for file_name in file_names:
-        sub_path = os.path.join(path, file_name)
-        # determine delimiter of csv file
-        with open(sub_path, 'r', encoding='utf-8') as csv_file:
-            delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
+    for folder_name in folder_names:
+        sub_path = os.path.join(path, folder_name)
+        raw_data = []
+        for nuts_id in nuts0_ids:
 
-        raw_data = pd.read_csv(sub_path, sep=delimiter, usecols=("NUTS0_code", "process", "hour", "load"))
-        raw_data = raw_data[raw_data["NUTS0_code"].isin(nuts0_ids)]
+            try:
+                # determine delimiter of csv file
+                with open(os.path.join(sub_path, str(nuts_id) + ".csv"), 'r', encoding='utf-8') as csv_file:
+                    delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
+                    df = pd.read_csv(os.path.join(sub_path, nuts_id + ".csv"), sep=delimiter, usecols=("NUTS0_code", "process", "hour", "load"))
+                    raw_data.append(df)
+            except IOError:
+                pass
+
+        raw_data = pd.concat(raw_data, ignore_index=True)
         data.append(raw_data)
 
     return data
