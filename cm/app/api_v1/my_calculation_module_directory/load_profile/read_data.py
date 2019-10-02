@@ -56,7 +56,7 @@ def ad_industry_profiles_local(nuts0_ids):
     for folder_name in folder_names:
         sub_path = os.path.join(path, folder_name)
         raw_data = []
-        for nuts_id in nuts0_ids:
+        for nuts_id in set(nuts0_ids):
 
             try:
                 # determine delimiter of csv file
@@ -69,7 +69,6 @@ def ad_industry_profiles_local(nuts0_ids):
 
         raw_data = pd.concat(raw_data, ignore_index=True)
         data.append(raw_data)
-
     return data
 
 
