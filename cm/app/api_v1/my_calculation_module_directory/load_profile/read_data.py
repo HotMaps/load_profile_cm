@@ -83,30 +83,42 @@ def ad_residential_heating_profile_local(nuts2_ids):
     path = os.path.dirname(
         os.path.dirname(os.path.abspath(__file__)))
     path = os.path.join(path, "data")
-    path1 = os.path.join(path, "hotmaps_task_2.7_load_profile_residential_heating_yearlong_2010_part1.csv")
-    path2 = os.path.join(path, "hotmaps_task_2.7_load_profile_residential_heating_yearlong_2010_part2.csv")
-    path3 = os.path.join(path, "data_hotmaps_task_2.7_load_profile_residential_shw_yearlong_2010_part1.csv")
-    path4 = os.path.join(path, "data_hotmaps_task_2.7_load_profile_residential_shw_yearlong_2010_part2.csv")
-    paths = [path1, path2]
-    # determine delimiter of csv file
-    data = pd.DataFrame(columns=("NUTS2_code", "process", "hour", "load"))
-    for path in paths:
-        with open(path, 'r', encoding='utf-8') as csv_file:
-            delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
-        dat = pd.read_csv(path, sep=delimiter, usecols=("NUTS2_code", "process", "hour", "load"))
-        data = data.append(dat)
-    data = data[data["NUTS2_code"].isin(nuts2_ids)]
+    path = os.path.join(path, "hotmaps_task_2.7_load_profile_residential_heating_yearlong_2010")
 
-    paths = [path3, path4]
-    data2 = pd.DataFrame(columns=("NUTS2_code", "process", "hour", "load"))
-    for path in paths:
-        with open(path, 'r', encoding='utf-8') as csv_file:
-            delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
-        dat = pd.read_csv(path, sep=delimiter, usecols=("NUTS2_code", "process", "hour", "load"))
-        data2 = data2.append(dat)
-    data2 = data2[data2["NUTS2_code"].isin(nuts2_ids)]
+    data = []
+    for nuts_id in set(nuts2_ids):
+        try:
+            # determine delimiter of csv file
+            with open(os.path.join(path, str(nuts_id) + ".csv"), 'r', encoding='utf-8') as csv_file:
+                delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
+                df = pd.read_csv(os.path.join(path, str(nuts_id) + ".csv"), sep=delimiter,
+                                 usecols=("NUTS2_code", "process", "hour", "load"))
+                data.append(df)
+        except IOError:
+            pass
 
-    return data, data2
+    data_heat = pd.concat(data, ignore_index=True)
+
+    path = os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(path, "data")
+    path = os.path.join(path, "data_hotmaps_task_2.7_load_profile_residential_shw_yearlong_2010")
+
+    data = []
+    for nuts_id in set(nuts2_ids):
+        try:
+            # determine delimiter of csv file
+            with open(os.path.join(path, str(nuts_id) + ".csv"), 'r', encoding='utf-8') as csv_file:
+                delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
+                df = pd.read_csv(os.path.join(path, str(nuts_id) + ".csv"), sep=delimiter,
+                                 usecols=("NUTS2_code", "process", "hour", "load"))
+                data.append(df)
+        except IOError:
+            pass
+
+    data_shw = pd.concat(data, ignore_index=True)
+
+    return data_heat, data_shw
 
 
 def ad_tertiary_profile_local(nuts2_ids):
@@ -120,30 +132,42 @@ def ad_tertiary_profile_local(nuts2_ids):
     path = os.path.dirname(
         os.path.dirname(os.path.abspath(__file__)))
     path = os.path.join(path, "data")
-    path1 = os.path.join(path, "data_hotmaps_task_2.7_load_profile_tertiary_heating_yearlong_2010_part1.csv")
-    path2 = os.path.join(path, "data_hotmaps_task_2.7_load_profile_tertiary_heating_yearlong_2010_part2.csv")
-    path3 = os.path.join(path, "hotmaps_task_2.7_load_profile_tertiary_shw_yearlong_2010_part1.csv")
-    path4 = os.path.join(path, "hotmaps_task_2.7_load_profile_tertiary_shw_yearlong_2010_part2.csv")
-    paths = [path1, path2]
-    # determine delimiter of csv file
-    data = pd.DataFrame(columns=("NUTS2_code", "process", "hour", "load"))
-    for path in paths:
-        with open(path, 'r', encoding='utf-8') as csv_file:
-            delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
-        dat = pd.read_csv(path, sep=delimiter, usecols=("NUTS2_code", "process", "hour", "load"))
-        data = data.append(dat)
-    data = data[data["NUTS2_code"].isin(nuts2_ids)]
+    path = os.path.join(path, "data_hotmaps_task_2.7_load_profile_tertiary_heating_yearlong_2010")
 
-    paths = [path3, path4]
-    data2 = pd.DataFrame(columns=("NUTS2_code", "process", "hour", "load"))
-    for path in paths:
-        with open(path, 'r', encoding='utf-8') as csv_file:
-            delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
-        dat = pd.read_csv(path, sep=delimiter, usecols=("NUTS2_code", "process", "hour", "load"))
-        data2 = data2.append(dat)
-    data2 = data2[data2["NUTS2_code"].isin(nuts2_ids)]
+    data = []
+    for nuts_id in set(nuts2_ids):
+        try:
+            # determine delimiter of csv file
+            with open(os.path.join(path, str(nuts_id) + ".csv"), 'r', encoding='utf-8') as csv_file:
+                delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
+                df = pd.read_csv(os.path.join(path, str(nuts_id) + ".csv"), sep=delimiter,
+                                 usecols=("NUTS2_code", "process", "hour", "load"))
+                data.append(df)
+        except IOError:
+            pass
 
-    return data, data2
+    data_heat = pd.concat(data, ignore_index=True)
+
+    path = os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__)))
+    path = os.path.join(path, "data")
+    path = os.path.join(path, "hotmaps_task_2.7_load_profile_tertiary_shw_yearlong_2010")
+
+    data = []
+    for nuts_id in set(nuts2_ids):
+        try:
+            # determine delimiter of csv file
+            with open(os.path.join(path, str(nuts_id) + ".csv"), 'r', encoding='utf-8') as csv_file:
+                delimiter = csv.Sniffer().sniff(csv_file.readline()).delimiter
+                df = pd.read_csv(os.path.join(path, str(nuts_id) + ".csv"), sep=delimiter,
+                                 usecols=("NUTS2_code", "process", "hour", "load"))
+                data.append(df)
+        except IOError:
+            pass
+
+    data_shw = pd.concat(data, ignore_index=True)
+
+    return data_heat, data_shw
 
 
 def ad_industrial_database_local(nuts2_ids):
