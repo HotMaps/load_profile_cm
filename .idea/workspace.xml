@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cb168f1-a4be-4f34-bea2-a75a1911a24d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/data/data_hotmaps_task_2.7_load_profile_residential_shw_yearlong_2010_part1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/data/data_hotmaps_task_2.7_load_profile_residential_shw_yearlong_2010_part2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/data/data_hotmaps_task_2.7_load_profile_tertiary_heating_yearlong_2010_part1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/data/data_hotmaps_task_2.7_load_profile_tertiary_heating_yearlong_2010_part2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/data/hotmaps_task_2.7_load_profile_residential_heating_yearlong_2010_part1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/data/hotmaps_task_2.7_load_profile_residential_heating_yearlong_2010_part2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/data/hotmaps_task_2.7_load_profile_tertiary_shw_yearlong_2010_part1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/data/hotmaps_task_2.7_load_profile_tertiary_shw_yearlong_2010_part2.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py" afterDir="false" />
-    </list>
+    <list default="true" id="8cb168f1-a4be-4f34-bea2-a75a1911a24d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +20,7 @@
     <session id="1506398229">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -78,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="99" column="50" lean-forward="true" selection-start-line="99" selection-start-column="50" selection-end-line="99" selection-end-column="50" />
+            <state relative-caret-position="513">
+              <caret line="104" column="95" selection-start-line="104" selection-start-column="95" selection-end-line="104" selection-end-column="95" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -100,8 +91,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1978" />
-    <option name="y" value="-25" />
+    <option name="x" value="1919" />
+    <option name="y" value="-22" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -278,7 +269,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -328,8 +319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cm/app/api_v1/my_calculation_module_directory/load_profile/read_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="99" column="50" lean-forward="true" selection-start-line="99" selection-start-column="50" selection-end-line="99" selection-end-column="50" />
+        <state relative-caret-position="513">
+          <caret line="104" column="95" selection-start-line="104" selection-start-column="95" selection-end-line="104" selection-end-column="95" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
