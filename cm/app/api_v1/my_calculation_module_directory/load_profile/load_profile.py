@@ -21,11 +21,11 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
                                 "Non-ferrous metals": "iron_and_steel", "Other non-classified": "food_and_tobacco"}
 
     # kWh/m^2/a
-    warm_water_density_res = {"AT": 21.67, "BE": 31.95, "BG": 12.93, "HR": 21.38, "CY": 8.80, "CZ": 22.83, "DK": 9.64,
+    warm_water_density_res = {"AT": 21.67, "CH": 21.67, "BE": 31.95, "BG": 12.93, "HR": 21.38, "CY": 8.80, "CZ": 22.83, "DK": 9.64,
                               "EE": 14.35, "FI": 10.15, "FR": 9.66, "DE": 8.27, "EL": 12.51, "HU": 13.66, "IE": 15.91,
                               "IT": 14.01, "LV": 15.71, "LT": 13.36, "LU": 8.29, "MT": 10.99, "NL": 8.91, "PL": 10.00,
                               "PT": 9.48, "RO": 11.48, "SK": 21.51, "SI": 21.74, "ES": 23.34, "SE": 13.54, "UK": 49.03}
-    warm_water_density_ter = {"AT": 6.57, "BE": 13.88, "BG": 15.88, "HR": 9.42, "CY": 6.26, "CZ": 9.18, "DK": 8.03,
+    warm_water_density_ter = {"AT": 6.57, "CH": 6.57, "BE": 13.88, "BG": 15.88, "HR": 9.42, "CY": 6.26, "CZ": 9.18, "DK": 8.03,
                               "EE": 14.13, "FI": 10.52, "FR": 9.57, "DE": 3.05, "EL": 6.99, "HU": 9.51, "IE": 10.87,
                               "IT": 5.62, "LV": 7.16, "LT": 10.46, "LU": 7.2, "MT": 10.45, "NL": 6.89, "PL": 9.55,
                               "PT": 21.47, "RO": 13.85, "SK": 8.49, "SI": 27.73, "ES": 12.44, "SE": 19.62, "UK": 13.45}
