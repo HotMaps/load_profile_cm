@@ -80,11 +80,11 @@ SIGNATURE = {
         # "lp_industry_chemicals_and_petrochemicals_yearlong_2018"
     ],
     "type_layer_needed": [
-        "heat_res_curr_density",
-        "heat_nonres_curr_density",
-        "nuts_id_number",
-        "gfa_res_curr_density",
-        "gfa_nonres_curr_density"
+        {"type": "heat_res_curr_density"},
+        {"type": "heat_nonres_curr_density"},
+        {"type": "nuts_id_number"},
+        {"type": "gfa_res_curr_density"},
+        {"type": "gfa_nonres_curr_density"}
     ],
 
     "cm_url": "Do not add something",
