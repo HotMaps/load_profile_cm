@@ -62,7 +62,7 @@ INPUTS_CALCULATION_MODULE = [
 ]
 
 SIGNATURE = {
-    "category": "Buildings",
+    "category": "Demand",
     "cm_name": CM_NAME,
     "layers_needed": [
         "heat_res_curr_density",
