@@ -6,6 +6,7 @@ import pandas as pd
 from .read_data import ad_industry_profiles_local, ad_residential_heating_profile_local, ad_tertiary_profile_local,\
     raster_array, ad_nuts_id, ad_industrial_database_local
 from .CM1 import create_normalized_profiles
+from .logger import Logger
 
 
 np.seterr(divide='ignore', invalid='ignore')
