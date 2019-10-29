@@ -116,10 +116,7 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     log_message = log.string_report()
     return -1, log_message
 
-    res_heating_profile = np.zeros(8760)
-    res_shw_profile = np.zeros(8760)
-    ter_heating_profile = np.zeros(8760)
-    ter_shw_profile = np.zeros(8760)
+
     for nuts_id, res_heat, gfa_res in zip(nuts, res_heat_per_nuts, gfa_res_per_nuts):
         res_heating_profile = res_heating_profile + normalized_heat_profiles["residential_heating"][nuts_id] *\
             (res_heat - gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3)
@@ -146,6 +143,10 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     total_ter_shw = np.sum(ter_shw_profile) / 1000  # GWh
     total_heat = np.sum(effective_profile) / 1000   # GWh
 
+    res_heating_profile = np.zeros(8760)
+    res_shw_profile = np.zeros(8760)
+    ter_heating_profile = np.zeros(8760)
+    ter_shw_profile = np.zeros(8760)
     data = np.array([[x for x in range(1, 8761)], effective_profile])
     data = data.transpose()
     data = pd.DataFrame(data, columns=["hour", "load"])
