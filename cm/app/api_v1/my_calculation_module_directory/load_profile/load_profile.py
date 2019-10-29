@@ -79,6 +79,10 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
             gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))   # m^2
             gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))     # m^2
 
+
+    log.add_error("reached.")
+    log_message = log.string_report()
+    return -1, log_message
     # normalize loaded profiles
     normalized_heat_profiles = dict()
     normalized_heat_profiles["residential_heating"] = create_normalized_profiles(residential_heating_profile[0],
@@ -91,9 +95,6 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
                                                                               "NUTS2_code", "hour", "load")
 
 
-    log.add_error("reached.")
-    log_message = log.string_report()
-    return -1, log_message
     for industry_profile in industry_profiles:
         normalized_heat_profiles[industry_profile.iloc[1]["process"]] = \
             create_normalized_profiles(industry_profile, "NUTS0_code", "hour", "load")
