@@ -113,9 +113,6 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     industry_profile = np.sum(heat_source_profiles, axis=0)
     if np.shape(industry_profile) == ():
         industry_profile = np.zeros(8760)
-    log.add_error("reached")
-    log_message = log.string_report()
-    return -1, log_message
 
     res_heating_profile = np.zeros(8760)
     res_shw_profile = np.zeros(8760)
@@ -132,6 +129,9 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
             (ter_heat - gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3)
         ter_shw_profile = ter_shw_profile + normalized_heat_profiles["sanitary_hot_water_tertiary"][nuts_id] *\
             gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3
+    log.add_error("reached")
+    log_message = log.string_report()
+    return -1, log_message
 
     res_heating_profile = res_heating_profile * res_heating_factor
     ter_heating_profile = ter_heating_profile * ter_heating_factor
