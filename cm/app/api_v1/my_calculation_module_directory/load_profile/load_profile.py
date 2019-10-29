@@ -113,6 +113,9 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     industry_profile = np.sum(heat_source_profiles, axis=0)
     if np.shape(industry_profile) == ():
         industry_profile = np.zeros(8760)
+    log.add_error("reached")
+    log_message = log.string_report()
+    return -1, log_message
 
     res_heating_profile = np.zeros(8760)
     res_shw_profile = np.zeros(8760)
@@ -144,9 +147,7 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     total_ter_shw = np.sum(ter_shw_profile) / 1000  # GWh
     total_heat = np.sum(effective_profile) / 1000   # GWh
 
-    log.add_error("reached")
-    log_message = log.string_report()
-    return -1, log_message
+
     data = np.array([[x for x in range(1, 8761)], effective_profile])
     data = data.transpose()
     data = pd.DataFrame(data, columns=["hour", "load"])
