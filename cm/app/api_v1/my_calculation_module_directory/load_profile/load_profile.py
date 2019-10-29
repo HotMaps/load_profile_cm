@@ -31,11 +31,19 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
                               "IT": 5.62, "LV": 7.16, "LT": 10.46, "LU": 7.2, "MT": 10.45, "NL": 6.89, "PL": 9.55,
                               "PT": 21.47, "RO": 13.85, "SK": 8.49, "SI": 27.73, "ES": 12.44, "SE": 19.62, "UK": 13.45}
 
+    # create logger
+    log = Logger()
+
     hdm_arr_res, gt_res = raster_array(heat_density_raster_res, return_gt=True)
     hdm_arr_nonres, gt_nonres = raster_array(heat_density_raster_nonres, return_gt=True)
     gfa_res_arr, gt_fra_res = raster_array(gfa_res_curr_density, return_gt=True)
     gfa_nonres_arr, gt_fra_nonres = raster_array(gfa_nonres_curr_density, return_gt=True)
     nuts_id_number, gt_nuts = raster_array(nuts_id_number, return_gt=True)
+
+    if np.shape(hdm_arr_res) == np.shape(hdm_arr_nonres) == np.shape(gfa_res_arr) == np.shape(gfa_nonres_arr) == np.shape(nuts_id_number):
+        log.add_error("rasters equal")
+        log_message = log.string_report()
+        return -1, log_message
 
     nuts2_ids = []
     nuts_id_map = ad_nuts_id()
