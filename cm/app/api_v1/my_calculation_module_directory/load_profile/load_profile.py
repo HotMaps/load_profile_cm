@@ -79,9 +79,6 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
             gfa_res_per_nuts.append(np.sum(gfa_res_arr[ind]))   # m^2
             gfa_nonres_per_nuts.append(np.sum(gfa_nonres_arr[ind]))     # m^2
 
-    log.add_error("reached")
-    log_message = log.string_report()
-    return -1, log_message
     # normalize loaded profiles
     normalized_heat_profiles = dict()
     normalized_heat_profiles["residential_heating"] = create_normalized_profiles(residential_heating_profile[0],
@@ -106,6 +103,9 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
         for missing_profile in missing_profiles:
             heat_sources = heat_sources[((heat_sources.Nuts0_ID != missing_profile) |
                                          (heat_sources.Subsector != sub_sector))]
+    log.add_error("reached")
+    log_message = log.string_report()
+    return -1, log_message
 
     # compute profiles
     heat_source_profiles = []
