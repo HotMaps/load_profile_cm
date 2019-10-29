@@ -112,7 +112,10 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     heat_source_profiles = np.array(heat_source_profiles)
     industry_profile = np.sum(heat_source_profiles, axis=0)
 
-
+    res_heating_profile = np.zeros(8760)
+    res_shw_profile = np.zeros(8760)
+    ter_heating_profile = np.zeros(8760)
+    ter_shw_profile = np.zeros(8760)
     for nuts_id, res_heat, gfa_res in zip(nuts, res_heat_per_nuts, gfa_res_per_nuts):
         res_heating_profile = res_heating_profile + normalized_heat_profiles["residential_heating"][nuts_id] *\
             (res_heat - gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3)
