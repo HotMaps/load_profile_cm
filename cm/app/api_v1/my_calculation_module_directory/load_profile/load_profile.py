@@ -103,9 +103,6 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
         for missing_profile in missing_profiles:
             heat_sources = heat_sources[((heat_sources.Nuts0_ID != missing_profile) |
                                          (heat_sources.Subsector != sub_sector))]
-    log.add_error("reached")
-    log_message = log.string_report()
-    return -1, log_message
 
     # compute profiles
     heat_source_profiles = []
@@ -151,6 +148,10 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     data = data.transpose()
     data = pd.DataFrame(data, columns=["hour", "load"])
     data.to_csv(output_directory, index=False)
+
+    log.add_error("reached")
+    log_message = log.string_report()
+    return -1, log_message
 
     industry_profile_monthly = np.mean(np.reshape(industry_profile, (12, 730)), axis=1).tolist()
     res_heating_profile_monthly = np.mean(np.reshape(res_heating_profile, (12, 730)), axis=1).tolist()
