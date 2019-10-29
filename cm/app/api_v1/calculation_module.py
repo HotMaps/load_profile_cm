@@ -49,7 +49,7 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
                                 "value": "0"}]
         return result
 
-    graphics, total_industry, total_res_heating, total_res_shw, total_ter_heating, total_ter_shw, total_heat = results
+    graphics, total_industry, total_res_heating, total_res_shw, total_ter_heating, total_ter_shw, total_heat, log_message = results
 
 
     def round_to_n(x, n):
@@ -70,20 +70,33 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
     result = dict()
 
     result["graphics"] = graphics
-
-    result['indicator'] = [{"unit": "GWh", "name": "Heat demand in GWh by industry",
-                        "value": str(round_to_n(total_industry, 3))},
-                       {"unit": "GWh", "name": "Heat demand in GWh by residential heating",
-                        "value": str(round_to_n(total_res_heating, 3))},
-                           {"unit": "GWh", "name": "Heat demand in GWh by residential warm water supply",
-                        "value": str(round_to_n(total_res_shw,3))},
-                           {"unit": "GWh", "name": "Heat demand in GWh by tertiary sector heating",
-                        "value": str(round_to_n(total_ter_heating,3))},
-                           {"unit": "GWh", "name": "Heat demand in GWh by tertiary sector warm water supply",
-                        "value": str(round_to_n(total_ter_shw,3))},
-                              {"unit": "GWh", "name": "Total heat demand in GWh",
-                        "value": str(round_to_n(total_heat,3))}]
-
+    if log_message == "":
+        result['indicator'] = [{"unit": "GWh", "name": "Heat demand in GWh by industry",
+                            "value": str(round_to_n(total_industry, 3))},
+                           {"unit": "GWh", "name": "Heat demand in GWh by residential heating",
+                            "value": str(round_to_n(total_res_heating, 3))},
+                               {"unit": "GWh", "name": "Heat demand in GWh by residential warm water supply",
+                            "value": str(round_to_n(total_res_shw,3))},
+                               {"unit": "GWh", "name": "Heat demand in GWh by tertiary sector heating",
+                            "value": str(round_to_n(total_ter_heating,3))},
+                               {"unit": "GWh", "name": "Heat demand in GWh by tertiary sector warm water supply",
+                            "value": str(round_to_n(total_ter_shw,3))},
+                                  {"unit": "GWh", "name": "Total heat demand in GWh",
+                            "value": str(round_to_n(total_heat,3))}]
+    else:
+        result['indicator'] = [{"unit": " ", "name": log_message, "value": "0"},
+                               {"unit": "GWh", "name": "Heat demand in GWh by industry",
+                                "value": str(round_to_n(total_industry, 3))},
+                               {"unit": "GWh", "name": "Heat demand in GWh by residential heating",
+                                "value": str(round_to_n(total_res_heating, 3))},
+                               {"unit": "GWh", "name": "Heat demand in GWh by residential warm water supply",
+                                "value": str(round_to_n(total_res_shw, 3))},
+                               {"unit": "GWh", "name": "Heat demand in GWh by tertiary sector heating",
+                                "value": str(round_to_n(total_ter_heating, 3))},
+                               {"unit": "GWh", "name": "Heat demand in GWh by tertiary sector warm water supply",
+                                "value": str(round_to_n(total_ter_shw, 3))},
+                               {"unit": "GWh", "name": "Total heat demand in GWh",
+                                "value": str(round_to_n(total_heat, 3))}]
     result["csv_files"] = [{"Load profile": "csv 1", "path": output_csv_path_1}]
 
     result['name'] = CM_NAME

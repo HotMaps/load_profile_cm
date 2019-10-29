@@ -119,19 +119,28 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     ter_heating_profile = np.zeros(8760)
     ter_shw_profile = np.zeros(8760)
     for nuts_id, res_heat, gfa_res in zip(nuts, res_heat_per_nuts, gfa_res_per_nuts):
-        res_heating_profile = res_heating_profile + normalized_heat_profiles["residential_heating"][nuts_id] *\
-            (res_heat - gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3)
-        res_shw_profile = res_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] *\
-            gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3
+        if nuts_id in normalized_heat_profiles["residential_heating"]:
+            res_heating_profile = res_heating_profile + normalized_heat_profiles["residential_heating"][nuts_id] *\
+                (res_heat - gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3)
+        else:
+            log.add_warning("No residential heating profile found for " + str(nuts_id))
+        if nuts_id in normalized_heat_profiles["sanitary_hot_water_residential"]:
+            res_shw_profile = res_shw_profile + normalized_heat_profiles["sanitary_hot_water_residential"][nuts_id] *\
+                gfa_res * warm_water_density_res[nuts_id[0:2]] / 1e3
+        else:
+            log.add_warning("No sanitary hot water residential profile found for " + str(nuts_id))
 
     for nuts_id, ter_heat, gfa_nonres in zip(nuts, nonres_heat_per_nuts, gfa_nonres_per_nuts):
-        ter_heating_profile = ter_heating_profile + normalized_heat_profiles["tertiary_heating"][nuts_id] *\
-            (ter_heat - gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3)
-        ter_shw_profile = ter_shw_profile + normalized_heat_profiles["sanitary_hot_water_tertiary"][nuts_id] *\
-            gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3
-    log.add_error("reached")
-    log_message = log.string_report()
-    return -1, log_message
+        if nuts_id in normalized_heat_profiles["tertiary_heating"]:
+            ter_heating_profile = ter_heating_profile + normalized_heat_profiles["tertiary_heating"][nuts_id] *\
+                (ter_heat - gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3)
+        else:
+            log.add_warning("No tertiary heating profile found for " + str(nuts_id))
+        if nuts_id in normalized_heat_profiles["sanitary_hot_water_tertiary"]:
+            ter_shw_profile = ter_shw_profile + normalized_heat_profiles["sanitary_hot_water_tertiary"][nuts_id] *\
+                gfa_nonres * warm_water_density_ter[nuts_id[0:2]] / 1e3
+        else:
+            log.add_warning("No sanitary hot water tertiary profile found for " + str(nuts_id))
 
     res_heating_profile = res_heating_profile * res_heating_factor
     ter_heating_profile = ter_heating_profile * ter_heating_factor
@@ -160,6 +169,7 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     ter_shw_profile_monthly = np.mean(np.reshape(ter_shw_profile, (12, 730)), axis=1).tolist()
     effective_profile_monthly = np.mean(np.reshape(effective_profile, (12, 730)), axis=1).tolist()
 
+    log_message = log.string_report()
     return industry_profile_monthly, res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
         ter_shw_profile_monthly, effective_profile_monthly, total_industry, total_res_heating, total_res_shw, total_ter_heating,\
-        total_ter_shw, total_heat
+        total_ter_shw, total_heat, log_message

@@ -9,7 +9,7 @@ def main(res_heating_factor, ter_heating_factor, res_water_factor, ter_water_fac
 
     industry_profile_monthly, res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly, \
     ter_shw_profile_monthly, effective_profile_monthly, total_industry, total_res_heating, total_res_shw, total_ter_heating, \
-    total_ter_shw, total_heat = results
+    total_ter_shw, total_heat, log_message = results
 
 
     graphics = [{
@@ -58,4 +58,4 @@ def main(res_heating_factor, ter_heating_factor, res_water_factor, ter_water_fac
                     ]
             }
         }]
-    return graphics, total_industry, total_res_heating, total_res_shw, total_ter_heating, total_ter_shw, total_heat
+    return graphics, total_industry, total_res_heating, total_res_shw, total_ter_heating, total_ter_shw, total_heat, log_message
