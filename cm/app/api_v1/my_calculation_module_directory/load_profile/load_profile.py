@@ -40,7 +40,7 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     gfa_nonres_arr, gt_fra_nonres = raster_array(gfa_nonres_curr_density, return_gt=True)
     nuts_id_number, gt_nuts = raster_array(nuts_id_number, return_gt=True)
 
-    if np.shape(hdm_arr_res) == np.shape(hdm_arr_nonres) == np.shape(gfa_res_arr) == np.shape(gfa_nonres_arr) == np.shape(nuts_id_number):
+    if not np.shape(hdm_arr_res) == np.shape(hdm_arr_nonres) == np.shape(gfa_res_arr) == np.shape(gfa_nonres_arr) == np.shape(nuts_id_number):
         log.add_error("rasters equal")
         log_message = log.string_report()
         return -1, log_message
