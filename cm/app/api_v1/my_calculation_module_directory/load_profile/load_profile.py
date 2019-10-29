@@ -114,6 +114,10 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     if np.shape(industry_profile) == ():
         industry_profile = np.zeros(8760)
 
+    log.add_error("reached.")
+    log_message = log.string_report()
+    return -1, log_message
+
     res_heating_profile = np.zeros(8760)
     res_shw_profile = np.zeros(8760)
     ter_heating_profile = np.zeros(8760)
