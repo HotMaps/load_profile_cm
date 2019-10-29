@@ -90,6 +90,10 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     normalized_heat_profiles["sanitary_hot_water_tertiary"] = create_normalized_profiles(tertiary_profiles[1],
                                                                               "NUTS2_code", "hour", "load")
 
+
+    log.add_error("reached.")
+    log_message = log.string_report()
+    return -1, log_message
     for industry_profile in industry_profiles:
         normalized_heat_profiles[industry_profile.iloc[1]["process"]] = \
             create_normalized_profiles(industry_profile, "NUTS0_code", "hour", "load")
@@ -113,10 +117,6 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     industry_profile = np.sum(heat_source_profiles, axis=0)
     if np.shape(industry_profile) == ():
         industry_profile = np.zeros(8760)
-
-    log.add_error("reached.")
-    log_message = log.string_report()
-    return -1, log_message
 
     res_heating_profile = np.zeros(8760)
     res_shw_profile = np.zeros(8760)
