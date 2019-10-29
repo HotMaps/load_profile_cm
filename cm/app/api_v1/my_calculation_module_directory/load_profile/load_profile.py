@@ -112,6 +112,10 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     heat_source_profiles = np.array(heat_source_profiles)
     industry_profile = np.sum(heat_source_profiles, axis=0)
 
+    log.add_error("reached")
+    log_message = log.string_report()
+    return -1, log_message
+
     res_heating_profile = np.zeros(8760)
     res_shw_profile = np.zeros(8760)
     ter_heating_profile = np.zeros(8760)
@@ -153,9 +157,6 @@ def load_profile_gen(res_heating_factor, ter_heating_factor, res_water_factor, t
     ter_heating_profile_monthly = np.mean(np.reshape(ter_heating_profile, (12, 730)), axis=1).tolist()
     ter_shw_profile_monthly = np.mean(np.reshape(ter_shw_profile, (12, 730)), axis=1).tolist()
     effective_profile_monthly = np.mean(np.reshape(effective_profile, (12, 730)), axis=1).tolist()
-    log.add_error("reached")
-    log_message = log.string_report()
-    return -1, log_message
 
     return industry_profile_monthly, res_heating_profile_monthly, res_shw_profile_monthly, ter_heating_profile_monthly,\
         ter_shw_profile_monthly, effective_profile_monthly, total_industry, total_res_heating, total_res_shw, total_ter_heating,\
