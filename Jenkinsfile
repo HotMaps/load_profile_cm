@@ -9,7 +9,7 @@ node {
     }
     finally {
       // stop services
-      sh 'docker-compose -f docker-compose.tests.yml down' 
+      sh 'docker-compose -f docker-compose.tests.yml down --rmi \'all\'' 
     }
   }
   
