@@ -41,7 +41,7 @@ SIGNATURE = {
         "heat_tot_curr_density",
     ],
     "type_layer_needed": [
-        "heat",
+        { "type":"heat"},
     ],
     "vectors_needed": [
         "heating_technologies_eu28",
