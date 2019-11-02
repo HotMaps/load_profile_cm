@@ -101,6 +101,14 @@ def calculation(output_directory, inputs_raster_selection, inputs_vector_selecti
 
     result['name'] = CM_NAME
 
+
+
+
+
+
+
+
+
     return result
 
 
