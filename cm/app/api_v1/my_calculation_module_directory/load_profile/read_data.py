@@ -96,8 +96,10 @@ def ad_residential_heating_profile_local(nuts2_ids):
                 data.append(df)
         except IOError:
             pass
-
-    data_heat = pd.concat(data, ignore_index=True)
+    if len(data) > 0:
+        data_heat = pd.concat(data, ignore_index=True)
+    else:
+        data_heat = pd.DataFrame([], columns=["NUTS2_code", "process", "hour", "load"])
 
     path = os.path.dirname(
         os.path.dirname(os.path.abspath(__file__)))
@@ -116,7 +118,10 @@ def ad_residential_heating_profile_local(nuts2_ids):
         except IOError:
             pass
 
-    data_shw = pd.concat(data, ignore_index=True)
+    if len(data) > 0:
+        data_shw = pd.concat(data, ignore_index=True)
+    else:
+        data_shw = pd.DataFrame([], columns=["NUTS2_code", "process", "hour", "load"])
 
     return data_heat, data_shw
 
@@ -146,7 +151,10 @@ def ad_tertiary_profile_local(nuts2_ids):
         except IOError:
             pass
 
-    data_heat = pd.concat(data, ignore_index=True)
+    if len(data) > 0:
+        data_heat = pd.concat(data, ignore_index=True)
+    else:
+        data_heat = pd.DataFrame([], columns=["NUTS2_code", "process", "hour", "load"])
 
     path = os.path.dirname(
         os.path.dirname(os.path.abspath(__file__)))
@@ -165,7 +173,10 @@ def ad_tertiary_profile_local(nuts2_ids):
         except IOError:
             pass
 
-    data_shw = pd.concat(data, ignore_index=True)
+    if len(data) > 0:
+        data_shw = pd.concat(data, ignore_index=True)
+    else:
+        data_shw = pd.DataFrame([], columns=["NUTS2_code", "process", "hour", "load"])
 
     return data_heat, data_shw
 
