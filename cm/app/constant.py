@@ -79,11 +79,11 @@ SIGNATURE = {
         # "lp_industry_chemicals_and_petrochemicals_yearlong_2018"
     ],
     "type_layer_needed": [
-        {"type": "heat_res_curr_density"},
-        {"type": "heat_nonres_curr_density"},
+        {"type": "heat_res_curr_density", "description": "Select heat demand residential density layer."},
+        {"type": "heat_nonres_curr_density", "description": "Select heat demand teritary density layer."},
         {"type": "nuts_id_number"},
-        {"type": "gfa_res_curr_density"},
-        {"type": "gfa_nonres_curr_density"}
+        {"type": "gfa_res_curr_density", "description": "Select gross floor area residential layer"},
+        {"type": "gfa_nonres_curr_density", "description": "Select gross floor area tertiary layer"}
     ],
 
     "cm_url": "Do not add something",
