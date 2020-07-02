@@ -89,6 +89,7 @@ SIGNATURE = {
     "cm_url": "Do not add something",
     "cm_description": "CM generating new load profiles",
     "cm_id": CM_ID,
+    "wiki_url":"https://wiki.hotmaps.eu/en/CM-Heat-load-profiles",
     'inputs_calculation_module': INPUTS_CALCULATION_MODULE
 }
 
