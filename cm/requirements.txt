@@ -1,7 +1,7 @@
 flask==1.0.2
 Flask-HTTPAuth==2.2.1
 Flask-SQLAlchemy==1.0
-Jinja2==2.10
+Jinja2==2.11.3
 MarkupSafe==0.23
 Pygments==1.6
 SQLAlchemy==1.1.10
